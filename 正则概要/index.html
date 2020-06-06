@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="简要说明RegExp对象，参照MDN文档,便于查找。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:07.008Z">
+<meta property="og:updated_time" content="2020-06-06T07:39:04.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则概要">
 <meta name="twitter:description" content="简要说明RegExp对象，参照MDN文档,便于查找。">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -436,7 +426,7 @@
 
       
         <p>简要说明RegExp对象，参照MDN文档,便于查找。<br><a id="more"></a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript中，正则表达式也是对象。这些模式被用于 RegExp 的<code>exec</code>和<code>test</code>方法, 以及 String 的 <code>match</code>、<code>replace</code>、<code>search</code> 和<code>split</code> 方法。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript中，正则表达式也是对象。这些模式被用于 RegExp 的<code>exec</code>和<code>test</code>方法, 以及 String 的 <code>match</code>、<code>replace</code>、<code>search</code> 和<code>split</code> 方法。</p>
 <p>ES6规定了String对象的正则方法通过调用<code>RegExp</code>的实例方法实现，从而做到所有与正则相关的方法，全都定义在RegExp对象上。</p>
 <h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/pattern/flags                  <span class="comment">//字面量</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(pattern [, flags])   <span class="comment">//构造函数</span></span><br><span class="line"></span><br><span class="line">/ab+c/i;</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'ab+c'</span>, <span class="string">'i'</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/ab+c/</span>, <span class="string">'i'</span>);</span><br></pre></td></tr></table></figure>
 <ul>
@@ -477,6 +467,7 @@
 <li>exec和match返回的都是数组。exec只会返回第一个满足条件的字符，match没有全局匹配(g)时，返回结果同exec。</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcda'</span>;</span><br><span class="line"></span><br><span class="line">/a/.exec(str);<span class="comment">//["a", index: 0, input: "abcda"]</span></span><br><span class="line">str.match(<span class="regexp">/a/</span>);<span class="comment">//["a", index: 0, input: "abcda"]</span></span><br><span class="line"></span><br><span class="line">/a/g.exec(str);<span class="comment">//["a", index: 0, input: "abcda"]</span></span><br><span class="line">str.match(<span class="regexp">/a/g</span>);<span class="comment">//["a", "a"]</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -634,7 +625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -712,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建"><span class="nav-number">1.1.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-修饰符"><span class="nav-number">1.1.1.</span> <span class="nav-text">u 修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y-修饰符"><span class="nav-number">1.1.2.</span> <span class="nav-text">y 修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec和match"><span class="nav-number">1.4.</span> <span class="nav-text">exec和match</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建"><span class="nav-number">2.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-修饰符"><span class="nav-number">2.1.</span> <span class="nav-text">u 修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y-修饰符"><span class="nav-number">2.2.</span> <span class="nav-text">y 修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec和match"><span class="nav-number">5.</span> <span class="nav-text">exec和match</span></a></li></ol></div>
             
 
           </div>
@@ -746,7 +737,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

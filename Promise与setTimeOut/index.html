@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="promise,es6,">
+  <meta name="keywords" content="promise,es6,事件循环,">
 
 
 
@@ -131,14 +131,14 @@
 
 
 <meta name="description" content="当同时存在Promise与setTimeOut时，它们的执行顺序是什么呢？">
-<meta name="keywords" content="promise,es6">
+<meta name="keywords" content="promise,es6,事件循环">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise与setTimeOut">
 <meta property="og:url" content="http://luckyp.top/Promise与setTimeOut/index.html">
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="当同时存在Promise与setTimeOut时，它们的执行顺序是什么呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:06.994Z">
+<meta property="og:updated_time" content="2020-06-06T07:12:26.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise与setTimeOut">
 <meta name="twitter:description" content="当同时存在Promise与setTimeOut时，它们的执行顺序是什么呢？">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -458,6 +448,7 @@
 <p>async 函数是一种特殊语法，特征是在 function 关键字之前加上 async 关键字，这样，就定义了一个 async 函数，我们可以在其中使用 await 来等待一个 <code>Promise</code>。</p>
 <p>其强大之处在于可以嵌套。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 盒子绿三秒，黄1秒，红三秒</span></span><br><span class="line"><span class="comment">//&lt;div id="light" style="background: #fff;width:10px;height:10px;"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">duration</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>)</span>&#123;</span><br><span class="line">        setTimeout(resolve, duration);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params">duration,color</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"light"</span>).style.background = color;</span><br><span class="line">    <span class="keyword">await</span> sleep(duration);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">await</span> changeColor(<span class="number">3000</span>,<span class="string">"green"</span>);</span><br><span class="line">        <span class="keyword">await</span> changeColor(<span class="number">1000</span>, <span class="string">"yellow"</span>);</span><br><span class="line">        <span class="keyword">await</span> changeColor(<span class="number">2000</span>, <span class="string">"red"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -506,6 +497,8 @@
             <a href="/tags/promise/" <i class="fa fa-tag"> promise</a>
           
             <a href="/tags/es6/" <i class="fa fa-tag"> es6</a>
+          
+            <a href="/tags/事件循环/" <i class="fa fa-tag"> 事件循环</a>
           
         </div>
       
@@ -615,7 +608,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +630,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -727,7 +720,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

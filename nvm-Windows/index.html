@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="node,nvm,">
+  <meta name="keywords" content="node,nvm,windows,">
 
 
 
@@ -131,14 +131,14 @@
 
 
 <meta name="description" content="安装下载nvm for Windows，在Windows便于管理node版本。">
-<meta name="keywords" content="node,nvm">
+<meta name="keywords" content="node,nvm,windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nvm-Windows">
 <meta property="og:url" content="http://luckyp.top/nvm-Windows/index.html">
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="安装下载nvm for Windows，在Windows便于管理node版本。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:07.001Z">
+<meta property="og:updated_time" content="2020-06-06T07:14:27.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nvm-Windows">
 <meta name="twitter:description" content="安装下载nvm for Windows，在Windows便于管理node版本。">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -436,9 +426,9 @@
 
       
         <p>安装下载nvm for Windows，在Windows便于管理node版本。<br><a id="more"></a></p>
-<h1 id="nvmw安装"><a href="#nvmw安装" class="headerlink" title="nvmw安装"></a>nvmw安装</h1><p>github代码库地址为<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">https://github.com/coreybutler/nvm-windows</a>。</p>
+<h2 id="nvmw安装"><a href="#nvmw安装" class="headerlink" title="nvmw安装"></a>nvmw安装</h2><p>github代码库地址为<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">https://github.com/coreybutler/nvm-windows</a>。</p>
 <p>存在多个安装方式，在安装之前需要注意的是，本地不要有nodeJs的已安装版本，建议卸载之后再进行。</p>
-<h2 id="nvm-noinstall-zip"><a href="#nvm-noinstall-zip" class="headerlink" title="nvm-noinstall.zip"></a>nvm-noinstall.zip</h2><p>推荐这种方式，较为灵活。下载安装包nvm-noinstall.zip到本地。解压缩，本例解压在<code>F:\nvm</code>,文件包含：</p>
+<h3 id="nvm-noinstall-zip"><a href="#nvm-noinstall-zip" class="headerlink" title="nvm-noinstall.zip"></a>nvm-noinstall.zip</h3><p>推荐这种方式，较为灵活。下载安装包nvm-noinstall.zip到本地。解压缩，本例解压在<code>F:\nvm</code>,文件包含：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">elevate.cmd</span><br><span class="line">elevate.vbs</span><br><span class="line">install.cmd</span><br><span class="line">LICENSE</span><br><span class="line">nvm.exe</span><br></pre></td></tr></table></figure>
 <p>双击<code>install.cmd</code>,以控制台形式显示,<code>Enter</code>键确认等待完成。会在当前根目录生成文件<code>settings.txt</code>。可能存在<code>Enter</code>键确认后报错，并弹出一个<code>settings.txt</code>文本框，关掉即可。将<code>settings.txt</code>文件拷贝至解压缩目录，这里是<code>F:\nvm</code>目录。添加如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root: F:\nvm</span><br><span class="line">path: F:\nodeJs</span><br><span class="line">arch: 64</span><br><span class="line">proxy: none</span><br><span class="line">node_mirror: http://npm.taobao.org/mirrors/node/</span><br><span class="line">npm_mirror: https://npm.taobao.org/mirrors/npm/</span><br></pre></td></tr></table></figure>
@@ -450,9 +440,9 @@
 <li><code>NVM_SYMLINK</code>中变量值修改为<code>settings.txt</code>中的<code>path:</code>地址，即<code>F:\nodeJs</code>;</li>
 <li><code>PATH</code>中添加<code>;%NVM_HOME%;%NVM_SYMLINK%;</code>即可。</li>
 </ul>
-<h2 id="nvm-setup-zip"><a href="#nvm-setup-zip" class="headerlink" title="nvm-setup.zip"></a>nvm-setup.zip</h2><p>该方法下载好安装包后，一路next，点击下一步即可，配置环境变量类似上一种方式。</p>
-<h1 id="nvmw检测"><a href="#nvmw检测" class="headerlink" title="nvmw检测"></a>nvmw检测</h1><p>通用检测方式终端输入<code>nvm -v</code>成功会显示版本号。</p>
-<h1 id="nvmw指令"><a href="#nvmw指令" class="headerlink" title="nvmw指令"></a>nvmw指令</h1><p>在终端输入<code>nvm</code>会提示简要指令。</p>
+<h3 id="nvm-setup-zip"><a href="#nvm-setup-zip" class="headerlink" title="nvm-setup.zip"></a>nvm-setup.zip</h3><p>该方法下载好安装包后，一路next，点击下一步即可，配置环境变量类似上一种方式。</p>
+<h2 id="nvmw检测"><a href="#nvmw检测" class="headerlink" title="nvmw检测"></a>nvmw检测</h2><p>通用检测方式终端输入<code>nvm -v</code>成功会显示版本号。</p>
+<h2 id="nvmw指令"><a href="#nvmw指令" class="headerlink" title="nvmw指令"></a>nvmw指令</h2><p>在终端输入<code>nvm</code>会提示简要指令。</p>
 <p><code>nvm list</code>: 获取当前node版本列表</p>
 <p><code>nvm install &lt;version&gt; [arch]</code>: 下载node版本。arch中可选择32/64，默认64位系统的node。</p>
 <p><code>nvm use [version] [arch]</code>: 切换node版本。</p>
@@ -506,6 +496,8 @@
           
             <a href="/tags/nvm/" <i class="fa fa-tag"> nvm</a>
           
+            <a href="/tags/windows/" <i class="fa fa-tag"> windows</a>
+          
         </div>
       
 
@@ -517,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git-常用/" rel="next" title="git-常用">
-                <i class="fa fa-chevron-left"></i> git-常用
+              <a href="/git常用/" rel="next" title="git常用">
+                <i class="fa fa-chevron-left"></i> git常用
               </a>
             
           </div>
@@ -614,7 +606,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -636,7 +628,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -692,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nvmw安装"><span class="nav-number">1.</span> <span class="nav-text">nvmw安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm-noinstall-zip"><span class="nav-number">1.1.</span> <span class="nav-text">nvm-noinstall.zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm-setup-zip"><span class="nav-number">1.2.</span> <span class="nav-text">nvm-setup.zip</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvmw检测"><span class="nav-number">2.</span> <span class="nav-text">nvmw检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvmw指令"><span class="nav-number">3.</span> <span class="nav-text">nvmw指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvmw安装"><span class="nav-number">1.</span> <span class="nav-text">nvmw安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm-noinstall-zip"><span class="nav-number">1.1.</span> <span class="nav-text">nvm-noinstall.zip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm-setup-zip"><span class="nav-number">1.2.</span> <span class="nav-text">nvm-setup.zip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvmw检测"><span class="nav-number">2.</span> <span class="nav-text">nvmw检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvmw指令"><span class="nav-number">3.</span> <span class="nav-text">nvmw指令</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +718,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

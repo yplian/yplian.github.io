@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="学习node的过程中，需要用到数据库提供数据，简要学习MySQL其基本操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:06.993Z">
+<meta property="og:updated_time" content="2020-06-06T07:19:44.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL简要">
 <meta name="twitter:description" content="学习node的过程中，需要用到数据库提供数据，简要学习MySQL其基本操作。">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -436,8 +426,8 @@
 
       
         <p>学习node的过程中，需要用到数据库提供数据，简要学习MySQL其基本操作。<br><a id="more"></a></p>
-<h1 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h1><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。</p>
-<h2 id="RDBMS"><a href="#RDBMS" class="headerlink" title="RDBMS"></a>RDBMS</h2><p>MySQL属于关系型数据库。关系型数据库管理系统（RDBMS）的主要特点在于：</p>
+<h2 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h2><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。</p>
+<h3 id="RDBMS"><a href="#RDBMS" class="headerlink" title="RDBMS"></a>RDBMS</h3><p>MySQL属于关系型数据库。关系型数据库管理系统（RDBMS）的主要特点在于：</p>
 <ul>
 <li>数据以表格的形式出现</li>
 <li>每行为各种记录名称</li>
@@ -445,7 +435,7 @@
 <li>许多的行和列组成一张表单</li>
 <li>若干的表单组成database</li>
 </ul>
-<h2 id="RDBMS术语"><a href="#RDBMS术语" class="headerlink" title="RDBMS术语"></a>RDBMS术语</h2><ul>
+<h3 id="RDBMS术语"><a href="#RDBMS术语" class="headerlink" title="RDBMS术语"></a>RDBMS术语</h3><ul>
 <li>数据库: 数据库是一些关联表的集合。.</li>
 <li>数据表: 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</li>
 <li>列: 一列(数据元素) 包含了相同的数据, 例如邮政编码的数据。</li>
@@ -457,7 +447,7 @@
 <li>索引：使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。</li>
 <li>参照完整性: 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。</li>
 </ul>
-<h2 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h2><p>MySQL有三大类数据类型, 分别为数字、日期\时间、字符串, 这三大类中又更细致的划分了许多子类型:</p>
+<h3 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h3><p>MySQL有三大类数据类型, 分别为数字、日期\时间、字符串, 这三大类中又更细致的划分了许多子类型:</p>
 <ul>
 <li>数字类型<ol>
 <li>整数: tinyint、smallint、mediumint、int、bigint</li>
@@ -473,7 +463,7 @@
 </li>
 </ul>
 <p>具体见附录。</p>
-<h1 id="MySQL操作"><a href="#MySQL操作" class="headerlink" title="MySQL操作"></a>MySQL操作</h1><h2 id="基础管理"><a href="#基础管理" class="headerlink" title="基础管理"></a>基础管理</h2><ul>
+<h2 id="MySQL操作"><a href="#MySQL操作" class="headerlink" title="MySQL操作"></a>MySQL操作</h2><h3 id="基础管理"><a href="#基础管理" class="headerlink" title="基础管理"></a>基础管理</h3><ul>
 <li><code>mysql -h 主机地址 -u 用户名 -p 用户密码;</code>:链接mysql数据库</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p #链接本机mysql</span><br><span class="line">mysql -h 110.110.110.110 -u root -p abcd123 #链接远程主机上的mysql</span><br></pre></td></tr></table></figure>
@@ -483,11 +473,11 @@
 <li><p><code>grant select on 数据库.* to 用户名@登录主机 identified by \&quot;密码\&quot;</code>:增加新用户</p>
 </li>
 </ul>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>create database 数据库名 [其他选项];</p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>create database 数据库名 [其他选项];</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database test_db character set gbk; #便于在命令符下显示中文</span><br></pre></td></tr></table></figure>
-<h2 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h2><p>show databases:列出 MySQL 数据库管理系统的数据库列表。</p>
-<h2 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -D 所选择的数据库名 -h 主机名 -u 用户名 -p  #登录时选择</span><br><span class="line">use 所选择的数据库名                             #登录后选择</span><br></pre></td></tr></table></figure>
-<h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><p>create table 表名称(列声明);</p>
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p>show databases:列出 MySQL 数据库管理系统的数据库列表。</p>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -D 所选择的数据库名 -h 主机名 -u 用户名 -p  #登录时选择</span><br><span class="line">use 所选择的数据库名                             #登录后选择</span><br></pre></td></tr></table></figure>
+<h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><p>create table 表名称(列声明);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table students</span><br><span class="line">    (</span><br><span class="line">        id int unsigned not null auto_increment primary key,</span><br><span class="line">        name char(8) not null,</span><br><span class="line">        sex char(4) not null,</span><br><span class="line">        age tinyint unsigned not null,</span><br><span class="line">        tel char(13) null default &quot;-&quot;</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
 <ul>
 <li>id为列的名称。</li>
@@ -499,7 +489,7 @@
 <li>tinyint取值范围为 -127到128的整数类型。</li>
 <li>null default “-“ 值为空时默认-</li>
 </ul>
-<h2 id="查看数据库表"><a href="#查看数据库表" class="headerlink" title="查看数据库表"></a>查看数据库表</h2><ul>
+<h3 id="查看数据库表"><a href="#查看数据库表" class="headerlink" title="查看数据库表"></a>查看数据库表</h3><ul>
 <li><p><code>describe 表名</code>:可查看已创建的表的详细信息。</p>
 </li>
 <li><p><code>show tables</code>:显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。</p>
@@ -518,27 +508,27 @@
 <li><code>show table status like [from db_name] [like &#39;pattern&#39;] \G</code>:该命令将输出MySQL数据库管理系统的性能及统计信息。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show table status from test_db;   # 显示数据库 test_db 中所有表的信息</span><br><span class="line"></span><br><span class="line">show table status from test_db like &apos;test%&apos;;     # 表名以test_db开头的表的信息</span><br><span class="line">show table status from test_db like &apos;test%&apos;\G;   # 加上 \G，查询结果按列打印</span><br></pre></td></tr></table></figure>
-<h2 id="表格插入数据"><a href="#表格插入数据" class="headerlink" title="表格插入数据"></a>表格插入数据</h2><p>insert [into] 表名 [(列名1, 列名2, 列名3, …)] values (值1, 值2, 值3, …);</p>
+<h3 id="表格插入数据"><a href="#表格插入数据" class="headerlink" title="表格插入数据"></a>表格插入数据</h3><p>insert [into] 表名 [(列名1, 列名2, 列名3, …)] values (值1, 值2, 值3, …);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into students (name, sex, age) values(&quot;小红&quot;, &quot;女&quot;, 12);</span><br></pre></td></tr></table></figure>
-<h2 id="查询表中数据"><a href="#查询表中数据" class="headerlink" title="查询表中数据"></a>查询表中数据</h2><p>select 列名称 from 表名称 [查询条件];</p>
+<h3 id="查询表中数据"><a href="#查询表中数据" class="headerlink" title="查询表中数据"></a>查询表中数据</h3><p>select 列名称 from 表名称 [查询条件];</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select name,age from students;                 #显示所有人的name,age信息</span><br><span class="line">select * from students where sex=&quot;女&quot;;         #性别是女的所有人信息</span><br><span class="line">select * from students where name like &quot;%小%&quot;; #名字中含有小的所有人信息</span><br><span class="line">select * from students where  id&gt;5 and age&gt;10; #id小于5且年龄大于10的所有人信息</span><br></pre></td></tr></table></figure>
-<h2 id="更新表中数据"><a href="#更新表中数据" class="headerlink" title="更新表中数据"></a>更新表中数据</h2><p>update 表名称 set 列名称=新值 where 更新条件;</p>
+<h3 id="更新表中数据"><a href="#更新表中数据" class="headerlink" title="更新表中数据"></a>更新表中数据</h3><p>update 表名称 set 列名称=新值 where 更新条件;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update students set age=age+1;                #所有人的年龄增加1</span><br><span class="line">update students set tel=default where id=5;   #将id为5的手机号改为默认的&quot;-&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><p>delete from 表名称 where 删除条件;</p>
+<h3 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h3><p>delete from 表名称 where 删除条件;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from students where id=3;     #将id为3的人数据删除</span><br></pre></td></tr></table></figure>
-<h2 id="添加表列"><a href="#添加表列" class="headerlink" title="添加表列"></a>添加表列</h2><p>alter table 表名 add 列名 列数据类型 [after 插入位置];</p>
+<h3 id="添加表列"><a href="#添加表列" class="headerlink" title="添加表列"></a>添加表列</h3><p>alter table 表名 add 列名 列数据类型 [after 插入位置];</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table students add address char(60);    #在表的最后追加列 address</span><br><span class="line">alter table students add birthday date after age;  #在名为age的列后插入列 birthday</span><br></pre></td></tr></table></figure>
-<h2 id="修改表列"><a href="#修改表列" class="headerlink" title="修改表列"></a>修改表列</h2><p>alter table 表名 change 列名称 列新名称 新数据类型;</p>
+<h3 id="修改表列"><a href="#修改表列" class="headerlink" title="修改表列"></a>修改表列</h3><p>alter table 表名 change 列名称 列新名称 新数据类型;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table students change tel telphone char(13) default &quot;-&quot;;</span><br><span class="line">#将表 tel 列改名为 telphone</span><br></pre></td></tr></table></figure>
-<h2 id="删除表列"><a href="#删除表列" class="headerlink" title="删除表列"></a>删除表列</h2><p>alter table 表名 drop 列名称;</p>
+<h3 id="删除表列"><a href="#删除表列" class="headerlink" title="删除表列"></a>删除表列</h3><p>alter table 表名 drop 列名称;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students drop birthday;   #删除brithday列</span><br></pre></td></tr></table></figure>
-<h2 id="重命名数据表"><a href="#重命名数据表" class="headerlink" title="重命名数据表"></a>重命名数据表</h2><p>alter table 表名 rename 新表名;</p>
+<h3 id="重命名数据表"><a href="#重命名数据表" class="headerlink" title="重命名数据表"></a>重命名数据表</h3><p>alter table 表名 rename 新表名;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students rename children;</span><br></pre></td></tr></table></figure>
-<h2 id="删除整张数据库表"><a href="#删除整张数据库表" class="headerlink" title="删除整张数据库表"></a>删除整张数据库表</h2><p>drop table 表名;</p>
+<h3 id="删除整张数据库表"><a href="#删除整张数据库表" class="headerlink" title="删除整张数据库表"></a>删除整张数据库表</h3><p>drop table 表名;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table children;</span><br></pre></td></tr></table></figure>
-<h2 id="删除整个数据库"><a href="#删除整个数据库" class="headerlink" title="删除整个数据库"></a>删除整个数据库</h2><p>drop database 数据库名;</p>
+<h3 id="删除整个数据库"><a href="#删除整个数据库" class="headerlink" title="删除整个数据库"></a>删除整个数据库</h3><p>drop database 数据库名;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database test_db;</span><br></pre></td></tr></table></figure>
-<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><table>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">整数类型</th>
@@ -850,7 +840,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -872,7 +862,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -928,7 +918,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库基础"><span class="nav-number">1.</span> <span class="nav-text">数据库基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS"><span class="nav-number">1.1.</span> <span class="nav-text">RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS术语"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">MySQL数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL操作"><span class="nav-number">2.</span> <span class="nav-text">MySQL操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础管理"><span class="nav-number">2.1.</span> <span class="nav-text">基础管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库"><span class="nav-number">2.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库"><span class="nav-number">2.3.</span> <span class="nav-text">查看数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择数据库"><span class="nav-number">2.4.</span> <span class="nav-text">选择数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库表"><span class="nav-number">2.5.</span> <span class="nav-text">创建数据库表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库表"><span class="nav-number">2.6.</span> <span class="nav-text">查看数据库表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格插入数据"><span class="nav-number">2.7.</span> <span class="nav-text">表格插入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询表中数据"><span class="nav-number">2.8.</span> <span class="nav-text">查询表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新表中数据"><span class="nav-number">2.9.</span> <span class="nav-text">更新表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除表中数据"><span class="nav-number">2.10.</span> <span class="nav-text">删除表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加表列"><span class="nav-number">2.11.</span> <span class="nav-text">添加表列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改表列"><span class="nav-number">2.12.</span> <span class="nav-text">修改表列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除表列"><span class="nav-number">2.13.</span> <span class="nav-text">删除表列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重命名数据表"><span class="nav-number">2.14.</span> <span class="nav-text">重命名数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除整张数据库表"><span class="nav-number">2.15.</span> <span class="nav-text">删除整张数据库表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除整个数据库"><span class="nav-number">2.16.</span> <span class="nav-text">删除整个数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">3.</span> <span class="nav-text">附录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库基础"><span class="nav-number">1.</span> <span class="nav-text">数据库基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RDBMS"><span class="nav-number">1.1.</span> <span class="nav-text">RDBMS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RDBMS术语"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">MySQL数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL操作"><span class="nav-number">2.</span> <span class="nav-text">MySQL操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础管理"><span class="nav-number">2.1.</span> <span class="nav-text">基础管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">2.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库"><span class="nav-number">2.3.</span> <span class="nav-text">查看数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择数据库"><span class="nav-number">2.4.</span> <span class="nav-text">选择数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库表"><span class="nav-number">2.5.</span> <span class="nav-text">创建数据库表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库表"><span class="nav-number">2.6.</span> <span class="nav-text">查看数据库表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格插入数据"><span class="nav-number">2.7.</span> <span class="nav-text">表格插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询表中数据"><span class="nav-number">2.8.</span> <span class="nav-text">查询表中数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新表中数据"><span class="nav-number">2.9.</span> <span class="nav-text">更新表中数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表中数据"><span class="nav-number">2.10.</span> <span class="nav-text">删除表中数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加表列"><span class="nav-number">2.11.</span> <span class="nav-text">添加表列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表列"><span class="nav-number">2.12.</span> <span class="nav-text">修改表列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表列"><span class="nav-number">2.13.</span> <span class="nav-text">删除表列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名数据表"><span class="nav-number">2.14.</span> <span class="nav-text">重命名数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除整张数据库表"><span class="nav-number">2.15.</span> <span class="nav-text">删除整张数据库表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除整个数据库"><span class="nav-number">2.16.</span> <span class="nav-text">删除整个数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">3.</span> <span class="nav-text">附录</span></a></li></ol></div>
             
 
           </div>
@@ -962,7 +952,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

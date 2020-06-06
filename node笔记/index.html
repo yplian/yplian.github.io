@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="node,">
+  <meta name="keywords" content="node,笔记,">
 
 
 
@@ -131,14 +131,14 @@
 
 
 <meta name="description" content="JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。每一种解析器都是一个运行环境，其内部提供的方法也不同。">
-<meta name="keywords" content="node">
+<meta name="keywords" content="node,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node笔记">
 <meta property="og:url" content="http://luckyp.top/node笔记/index.html">
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。每一种解析器都是一个运行环境，其内部提供的方法也不同。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:07.001Z">
+<meta property="og:updated_time" content="2020-06-06T07:21:31.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node笔记">
 <meta name="twitter:description" content="JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。每一种解析器都是一个运行环境，其内部提供的方法也不同。">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -436,7 +426,7 @@
 
       
         <p>JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。每一种解析器都是一个运行环境，其内部提供的方法也不同。<br><a id="more"></a></p>
-<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>官网下载安装<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">node</a>，支持交互式命令模式。在终端通过<code>$ node</code>即可。常用来测试正则。nodeJs使用CommonJS规范。</p>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>官网下载安装<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">node</a>，支持交互式命令模式。在终端通过<code>$ node</code>即可。常用来测试正则。nodeJs使用CommonJS规范。</p>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p><code>require</code>:用于在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo  = <span class="built_in">require</span>(<span class="string">'./foo'</span>);       <span class="comment">//相对引入，后缀js可以省略（绝对引入类似）</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="built_in">require</span>(<span class="string">'./data.json'</span>); <span class="comment">//可引入静态json</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);        <span class="comment">//内置模块path</span></span><br></pre></td></tr></table></figure>
 <p><code>exports</code>:当前模块的导出对象，用于导出模块公有方法和属性。</p>
@@ -603,6 +593,8 @@
           
             <a href="/tags/node/" <i class="fa fa-tag"> node</a>
           
+            <a href="/tags/笔记/" <i class="fa fa-tag"> 笔记</a>
+          
         </div>
       
 
@@ -711,7 +703,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +725,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -789,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node"><span class="nav-number">1.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装使用"><span class="nav-number">1.1.</span> <span class="nav-text">安装使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">1.2.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块解析规则"><span class="nav-number">1.2.2.</span> <span class="nav-text">模块解析规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置模块"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">内置模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-modules目录"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">node_modules目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NODE-PATH环境变量"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">NODE_PATH环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm常用"><span class="nav-number">1.3.</span> <span class="nav-text">npm常用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">1.4.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作示例"><span class="nav-number">1.4.1.</span> <span class="nav-text">文件操作示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作API"><span class="nav-number">1.4.2.</span> <span class="nav-text">文件操作API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Buffer（数据块）"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Buffer（数据块）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream（数据流）"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">Stream（数据流）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-System（文件系统）"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">File System（文件系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Path（路径）"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">Path（路径）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历"><span class="nav-number">1.4.3.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归算法"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">递归算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历算法"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">遍历算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步遍历"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">同步遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步遍历"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">异步遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本编码"><span class="nav-number">1.4.4.</span> <span class="nav-text">文本编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-number">1.5.</span> <span class="nav-text">网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单示例"><span class="nav-number">1.5.1.</span> <span class="nav-text">简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络操作API"><span class="nav-number">1.5.2.</span> <span class="nav-text">网络操作API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http（HTTP）"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">http（HTTP）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#https（HTTPS）"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">https（HTTPS）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL（网址）"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">URL（网址）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-String（查询字符串）"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">Query String（查询字符串）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zlib（压缩）"><span class="nav-number">1.5.2.5.</span> <span class="nav-text">Zlib（压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Net（网络）"><span class="nav-number">1.5.2.6.</span> <span class="nav-text">Net（网络）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程管理"><span class="nav-number">1.6.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程管理示例"><span class="nav-number">1.6.1.</span> <span class="nav-text">进程管理示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程管理API"><span class="nav-number">1.6.2.</span> <span class="nav-text">进程管理API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Child-Process"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">Child Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cluster"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">Cluster</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装使用"><span class="nav-number">1.</span> <span class="nav-text">安装使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">2.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">2.1.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块解析规则"><span class="nav-number">2.2.</span> <span class="nav-text">模块解析规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置模块"><span class="nav-number">2.2.1.</span> <span class="nav-text">内置模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-modules目录"><span class="nav-number">2.2.2.</span> <span class="nav-text">node_modules目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NODE-PATH环境变量"><span class="nav-number">2.2.3.</span> <span class="nav-text">NODE_PATH环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm常用"><span class="nav-number">3.</span> <span class="nav-text">npm常用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">4.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作示例"><span class="nav-number">4.1.</span> <span class="nav-text">文件操作示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作API"><span class="nav-number">4.2.</span> <span class="nav-text">文件操作API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Buffer（数据块）"><span class="nav-number">4.2.1.</span> <span class="nav-text">Buffer（数据块）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream（数据流）"><span class="nav-number">4.2.2.</span> <span class="nav-text">Stream（数据流）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-System（文件系统）"><span class="nav-number">4.2.3.</span> <span class="nav-text">File System（文件系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Path（路径）"><span class="nav-number">4.2.4.</span> <span class="nav-text">Path（路径）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历"><span class="nav-number">4.3.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归算法"><span class="nav-number">4.3.1.</span> <span class="nav-text">递归算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历算法"><span class="nav-number">4.3.2.</span> <span class="nav-text">遍历算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步遍历"><span class="nav-number">4.3.3.</span> <span class="nav-text">同步遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步遍历"><span class="nav-number">4.3.4.</span> <span class="nav-text">异步遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本编码"><span class="nav-number">4.4.</span> <span class="nav-text">文本编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-number">5.</span> <span class="nav-text">网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单示例"><span class="nav-number">5.1.</span> <span class="nav-text">简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络操作API"><span class="nav-number">5.2.</span> <span class="nav-text">网络操作API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http（HTTP）"><span class="nav-number">5.2.1.</span> <span class="nav-text">http（HTTP）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#https（HTTPS）"><span class="nav-number">5.2.2.</span> <span class="nav-text">https（HTTPS）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL（网址）"><span class="nav-number">5.2.3.</span> <span class="nav-text">URL（网址）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-String（查询字符串）"><span class="nav-number">5.2.4.</span> <span class="nav-text">Query String（查询字符串）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zlib（压缩）"><span class="nav-number">5.2.5.</span> <span class="nav-text">Zlib（压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Net（网络）"><span class="nav-number">5.2.6.</span> <span class="nav-text">Net（网络）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程管理"><span class="nav-number">6.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程管理示例"><span class="nav-number">6.1.</span> <span class="nav-text">进程管理示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程管理API"><span class="nav-number">6.2.</span> <span class="nav-text">进程管理API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process"><span class="nav-number">6.2.1.</span> <span class="nav-text">Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Child-Process"><span class="nav-number">6.2.2.</span> <span class="nav-text">Child Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cluster"><span class="nav-number">6.2.3.</span> <span class="nav-text">Cluster</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -823,7 +815,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="编辑器,">
+  <meta name="keywords" content="编辑器,vscode,插件,">
 
 
 
@@ -131,7 +131,7 @@
 
 
 <meta name="description" content="vscode自身带有调试工具，简单说明下使用方法。">
-<meta name="keywords" content="编辑器">
+<meta name="keywords" content="编辑器,vscode,插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vscode debugging">
 <meta property="og:url" content="http://luckyp.top/vscode-debugging/index.html">
@@ -140,7 +140,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://luckyp.top/images/vscode_debug_2.png">
 <meta property="og:image" content="http://luckyp.top/images/vscode_debug_1.png">
-<meta property="og:updated_time" content="2020-05-28T09:30:07.002Z">
+<meta property="og:updated_time" content="2020-06-06T07:37:16.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode debugging">
 <meta name="twitter:description" content="vscode自身带有调试工具，简单说明下使用方法。">
@@ -261,16 +261,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -440,12 +430,12 @@
       
         <p>vscode自身带有调试工具，简单说明下使用方法。<br><a id="more"></a></p>
 <p>官方本身的文档中有相关的介绍，不过介绍的很简单，官方文档地址<a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noopener">https://code.visualstudio.com/docs/editor/debugging</a>.</p>
-<h1 id="调试界面"><a href="#调试界面" class="headerlink" title="调试界面"></a>调试界面</h1><p>要打开Debug视图,可以通过<code>键Ctrl + Shift + d</code>，或者鼠标点击下图图标所示。<br><img src="../images/vscode_debug_2.png" alt="vscode_debug_1.png"></p>
-<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><h2 id="启动配置"><a href="#启动配置" class="headerlink" title="启动配置"></a>启动配置</h2><p>最简单的方式是<code>F5</code>，因为没有配置文件，会出现命令选项窗口。<br><img src="../images/vscode_debug_1.png" alt="vscode_debug_1.png"></p>
+<h2 id="调试界面"><a href="#调试界面" class="headerlink" title="调试界面"></a>调试界面</h2><p>要打开Debug视图,可以通过<code>键Ctrl + Shift + d</code>，或者鼠标点击下图图标所示。<br><img src="../images/vscode_debug_2.png" alt="vscode_debug_1.png"></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="启动配置"><a href="#启动配置" class="headerlink" title="启动配置"></a>启动配置</h3><p>最简单的方式是<code>F5</code>，因为没有配置文件，会出现命令选项窗口。<br><img src="../images/vscode_debug_1.png" alt="vscode_debug_1.png"></p>
 <p>选择node(或者你需要的调试环境)，这里<code>chrome</code>选项是<code>Debugger for Chrome</code>插件提供的。</p>
 <p>选择后，在当前工作区会出现<code>.vscode</code>文件夹。其中有<code>launch.json</code>文件，它默认提供了一种方式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 使用 IntelliSense 了解相关属性。</span></span><br><span class="line">  <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">  <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="string">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Launch Program"</span>,</span><br><span class="line">      <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/app.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="简要参数"><a href="#简要参数" class="headerlink" title="简要参数"></a>简要参数</h2><p>以下属性对于每个启动配置都是必需的：</p>
+<h3 id="简要参数"><a href="#简要参数" class="headerlink" title="简要参数"></a>简要参数</h3><p>以下属性对于每个启动配置都是必需的：</p>
 <ul>
 <li>type - 用于此启动配置的调试器类型。每安装调试扩展引入一个类型，例如，node对于内置的节点调试器，或php与go对PHP和去扩展。</li>
 <li>request - 此启动配置的请求类型。目前支持的是launch和attach。</li>
@@ -474,11 +464,12 @@
 <li>${file}活动编辑器中打开的文件</li>
 <li>${env:Name}环境变量“Name”的示例</li>
 </ul>
-<h1 id="多目标调试"><a href="#多目标调试" class="headerlink" title="多目标调试"></a>多目标调试</h1><p>使用多目标调试很简单：在开始第一个调试会话之后，您可以启动另一个会话。只要第二个会话启动并运行，VS Code UI切换到多目标模式</p>
-<h2 id="复合启动"><a href="#复合启动" class="headerlink" title="复合启动"></a>复合启动</h2><p>另一种启动多个调试会话的方法是使用所谓的复合启动配置。复合启动配置列出了应该并行启动的两个或更多启动配置的名称。复合启动配置显示在启动配置下拉菜单中。</p>
+<h2 id="多目标调试"><a href="#多目标调试" class="headerlink" title="多目标调试"></a>多目标调试</h2><p>使用多目标调试很简单：在开始第一个调试会话之后，您可以启动另一个会话。只要第二个会话启动并运行，VS Code UI切换到多目标模式</p>
+<h3 id="复合启动"><a href="#复合启动" class="headerlink" title="复合启动"></a>复合启动</h3><p>另一种启动多个调试会话的方法是使用所谓的复合启动配置。复合启动配置列出了应该并行启动的两个或更多启动配置的名称。复合启动配置显示在启动配置下拉菜单中。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="string">"configurations"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">            <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"Server"</span>,</span><br><span class="line">            <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/server.js"</span>,</span><br><span class="line">            <span class="string">"cwd"</span>: <span class="string">"$&#123;workspaceFolder&#125;"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">            <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"Client"</span>,</span><br><span class="line">            <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/client.js"</span>,</span><br><span class="line">            <span class="string">"cwd"</span>: <span class="string">"$&#123;workspaceFolder&#125;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"compounds"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"Server/Client"</span>,</span><br><span class="line">            <span class="string">"configurations"</span>: [<span class="string">"Server"</span>, <span class="string">"Client"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h1><p>使用的chrome配合node调试。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">  <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">  <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="string">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"node服务"</span>,</span><br><span class="line">      <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/index.js"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Chrome调试"</span>,</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"chrome"</span>,</span><br><span class="line">      <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="string">"file"</span>: <span class="string">"$&#123;workspaceRoot&#125;/index.js"</span>,</span><br><span class="line">  <span class="comment">//  "url": "http://mysite.com/index.html", //使用外部服务器时,请注释掉 file, 改用 url</span></span><br><span class="line">      <span class="string">"runtimeExecutable"</span>: <span class="string">"C:\\Users\\PC\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"</span>, <span class="comment">// 改成您的 Chrome 安装路径</span></span><br><span class="line">      <span class="string">"sourceMaps"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"webRoot"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">  <span class="comment">//  "preLaunchTask":"build",</span></span><br><span class="line">      <span class="string">"userDataDir"</span>:<span class="string">"$&#123;tmpdir&#125;"</span>,</span><br><span class="line">      <span class="comment">// "port":5433</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"compounds"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Compound"</span>,</span><br><span class="line">      <span class="string">"configurations"</span>: [<span class="string">"node服务"</span>,<span class="string">"Chrome调试"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h2><p>使用的chrome配合node调试。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 使用 IntelliSense 了解相关属性。</span></span><br><span class="line">  <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">  <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="string">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"node服务"</span>,</span><br><span class="line">      <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/index.js"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Chrome调试"</span>,</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"chrome"</span>,</span><br><span class="line">      <span class="string">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="string">"file"</span>: <span class="string">"$&#123;workspaceRoot&#125;/index.js"</span>,</span><br><span class="line">  <span class="comment">//  "url": "http://mysite.com/index.html", //使用外部服务器时,请注释掉 file, 改用 url</span></span><br><span class="line">      <span class="string">"runtimeExecutable"</span>: <span class="string">"C:\\Users\\PC\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"</span>, <span class="comment">// 改成您的 Chrome 安装路径</span></span><br><span class="line">      <span class="string">"sourceMaps"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"webRoot"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">  <span class="comment">//  "preLaunchTask":"build",</span></span><br><span class="line">      <span class="string">"userDataDir"</span>:<span class="string">"$&#123;tmpdir&#125;"</span>,</span><br><span class="line">      <span class="comment">// "port":5433</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"compounds"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Compound"</span>,</span><br><span class="line">      <span class="string">"configurations"</span>: [<span class="string">"node服务"</span>,<span class="string">"Chrome调试"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -525,6 +516,10 @@
         <div class="post-tags">
           
             <a href="/tags/编辑器/" <i class="fa fa-tag"> 编辑器</a>
+          
+            <a href="/tags/vscode/" <i class="fa fa-tag"> vscode</a>
+          
+            <a href="/tags/插件/" <i class="fa fa-tag"> 插件</a>
           
         </div>
       
@@ -634,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -712,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#调试界面"><span class="nav-number">1.</span> <span class="nav-text">调试界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置文件"><span class="nav-number">2.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动配置"><span class="nav-number">2.1.</span> <span class="nav-text">启动配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要参数"><span class="nav-number">2.2.</span> <span class="nav-text">简要参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多目标调试"><span class="nav-number">3.</span> <span class="nav-text">多目标调试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#复合启动"><span class="nav-number">3.1.</span> <span class="nav-text">复合启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单例子"><span class="nav-number">4.</span> <span class="nav-text">简单例子</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#调试界面"><span class="nav-number">1.</span> <span class="nav-text">调试界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">2.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动配置"><span class="nav-number">2.1.</span> <span class="nav-text">启动配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要参数"><span class="nav-number">2.2.</span> <span class="nav-text">简要参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多目标调试"><span class="nav-number">3.</span> <span class="nav-text">多目标调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复合启动"><span class="nav-number">3.1.</span> <span class="nav-text">复合启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单例子"><span class="nav-number">4.</span> <span class="nav-text">简单例子</span></a></li></ol></div>
             
 
           </div>
@@ -746,7 +741,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

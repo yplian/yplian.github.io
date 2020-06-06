@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="远方">
 <meta property="og:description" content="es6中改进的数值，新增方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-28T09:30:06.996Z">
+<meta property="og:updated_time" content="2020-06-06T07:34:11.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6入门笔记-数值">
 <meta name="twitter:description" content="es6中改进的数值，新增方法。">
@@ -258,16 +258,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -437,17 +427,17 @@
       
         <p>es6中改进的数值，新增方法。<br><a id="more"></a></p>
 <p>回顾es5之前进制转换，通过toSting和parseInt的方式。<a href="/2017/01/08/进制转换/">点击跳转</a></p>
-<h1 id="二进制与八进制"><a href="#二进制与八进制" class="headerlink" title="二进制与八进制"></a>二进制与八进制</h1><p>ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。</p>
+<h2 id="二进制与八进制"><a href="#二进制与八进制" class="headerlink" title="二进制与八进制"></a>二进制与八进制</h2><p>ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0b111110111</span> === <span class="number">503</span> <span class="comment">// true</span></span><br><span class="line"><span class="number">0o767</span> === <span class="number">503</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h1 id="Number-isFinite-Number-isNaN-Number-isInteger"><a href="#Number-isFinite-Number-isNaN-Number-isInteger" class="headerlink" title="Number.isFinite(), Number.isNaN(),Number.isInteger()"></a>Number.isFinite(), Number.isNaN(),Number.isInteger()</h1><p><code>Number.isFinite()</code>：判断数值是否为有限的(finite)。<br><code>Number.isNaN()</code>：判断数值是否是NaN。<br><code>Number.isInteger()</code>：判断数值是否是整数。</p>
+<h2 id="Number-isFinite-Number-isNaN-Number-isInteger"><a href="#Number-isFinite-Number-isNaN-Number-isInteger" class="headerlink" title="Number.isFinite(), Number.isNaN(),Number.isInteger()"></a>Number.isFinite(), Number.isNaN(),Number.isInteger()</h2><p><code>Number.isFinite()</code>：判断数值是否为有限的(finite)。<br><code>Number.isNaN()</code>：判断数值是否是NaN。<br><code>Number.isInteger()</code>：判断数值是否是整数。</p>
 <p>与传统的方法不同，不会先调用<code>Number()</code>转换为数值后再进行判断，而是直接判断，不是number类型的直接返回<code>false</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.isFinite(<span class="number">10</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="literal">NaN</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="literal">Infinity</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(-<span class="literal">Infinity</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="string">'foo'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="string">'10'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="literal">true</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="number">10</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="string">'10'</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="literal">true</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="number">9</span>/<span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="string">'true'</span>/<span class="number">0</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="string">'true'</span>/<span class="string">'true'</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">25</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">25.0</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">25.1</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="string">"15"</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="literal">true</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<h1 id="Number-parseInt-Number-parseFloat"><a href="#Number-parseInt-Number-parseFloat" class="headerlink" title="Number.parseInt(), Number.parseFloat()"></a>Number.parseInt(), Number.parseFloat()</h1><p>整合全局方法到Number对象上，行为保持不变。</p>
+<h2 id="Number-parseInt-Number-parseFloat"><a href="#Number-parseInt-Number-parseFloat" class="headerlink" title="Number.parseInt(), Number.parseFloat()"></a>Number.parseInt(), Number.parseFloat()</h2><p>整合全局方法到Number对象上，行为保持不变。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5的写法</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'12.34'</span>) <span class="comment">// 12</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'123.45#'</span>) <span class="comment">// 123.45</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6的写法</span></span><br><span class="line"><span class="built_in">Number</span>.parseInt(<span class="string">'12.34'</span>) <span class="comment">// 12</span></span><br><span class="line"><span class="built_in">Number</span>.parseFloat(<span class="string">'123.45#'</span>) <span class="comment">// 123.45</span></span><br></pre></td></tr></table></figure>
-<h1 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h1><p>Number.EPSILON 属性表示 1 和大于 1 的最小值（可表示为 Number）的差值。</p>
+<h2 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h2><p>Number.EPSILON 属性表示 1 和大于 1 的最小值（可表示为 Number）的差值。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0.1</span>;</span><br><span class="line">y = <span class="number">0.2</span>;</span><br><span class="line">z = <span class="number">0.3</span>;</span><br><span class="line">equal = (<span class="built_in">Math</span>.abs(x + y - z) &lt; <span class="built_in">Number</span>.EPSILON); <span class="comment">//true</span></span><br><span class="line">x+y == z <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<h1 id="Number-isSafeInteger"><a href="#Number-isSafeInteger" class="headerlink" title="Number.isSafeInteger()"></a>Number.isSafeInteger()</h1><p>JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。<code>Number.isSafeInteger()</code>用来判断是否在该数值范围内。</p>
-<h1 id="Math扩展"><a href="#Math扩展" class="headerlink" title="Math扩展"></a>Math扩展</h1><ul>
+<h2 id="Number-isSafeInteger"><a href="#Number-isSafeInteger" class="headerlink" title="Number.isSafeInteger()"></a>Number.isSafeInteger()</h2><p>JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。<code>Number.isSafeInteger()</code>用来判断是否在该数值范围内。</p>
+<h2 id="Math扩展"><a href="#Math扩展" class="headerlink" title="Math扩展"></a>Math扩展</h2><ul>
 <li>Math.trunc方法用于去除一个数的小数部分，返回整数部分。非数值默认先调用Number转换。</li>
 <li>Math.sign方法的返回值判断一个数到底是正数(+1)、负数(-1)、还是零(0 -0),其他值(NaN)。非数值默认先调用Number转换。</li>
 <li>Math.cbrt方法用于计算一个数的立方根。</li>
@@ -473,7 +463,7 @@
 <li><p>Math.sign()用来判断一个值的正负，但是如果参数是-0，它会返回-0。</p>
 </li>
 </ul>
-<h1 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符"></a>指数运算符</h1><p>ES2016 新增了一个指数运算符（**）。相当于Math.pow(base,exponent)。</p>
+<h2 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符"></a>指数运算符</h2><p>ES2016 新增了一个指数运算符（**）。相当于Math.pow(base,exponent)。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">2</span> <span class="comment">// 4</span></span><br><span class="line"><span class="number">2</span> ** <span class="number">3</span> <span class="comment">// 8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1.5</span>;</span><br><span class="line">a **= <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 等同于 a = a * a;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">4</span>;</span><br><span class="line">b **= <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 等同于 b = b * b * b;</span></span><br></pre></td></tr></table></figure>
 <p>参考链接<br><a href="http://es6.ruanyifeng.com/#docs/number" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/number</a></p>
 
@@ -636,7 +626,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -658,7 +648,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -714,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二进制与八进制"><span class="nav-number">1.</span> <span class="nav-text">二进制与八进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-isFinite-Number-isNaN-Number-isInteger"><span class="nav-number">2.</span> <span class="nav-text">Number.isFinite(), Number.isNaN(),Number.isInteger()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-parseInt-Number-parseFloat"><span class="nav-number">3.</span> <span class="nav-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">4.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-isSafeInteger"><span class="nav-number">5.</span> <span class="nav-text">Number.isSafeInteger()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math扩展"><span class="nav-number">6.</span> <span class="nav-text">Math扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指数运算符"><span class="nav-number">7.</span> <span class="nav-text">指数运算符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制与八进制"><span class="nav-number">1.</span> <span class="nav-text">二进制与八进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number-isFinite-Number-isNaN-Number-isInteger"><span class="nav-number">2.</span> <span class="nav-text">Number.isFinite(), Number.isNaN(),Number.isInteger()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number-parseInt-Number-parseFloat"><span class="nav-number">3.</span> <span class="nav-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">4.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number-isSafeInteger"><span class="nav-number">5.</span> <span class="nav-text">Number.isSafeInteger()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math扩展"><span class="nav-number">6.</span> <span class="nav-text">Math扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数运算符"><span class="nav-number">7.</span> <span class="nav-text">指数运算符</span></a></li></ol></div>
             
 
           </div>
@@ -748,7 +738,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 

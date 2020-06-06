@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="react,">
+  <meta name="keywords" content="react,脚手架,">
 
 
 
@@ -131,7 +131,7 @@
 
 
 <meta name="description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
-<meta name="keywords" content="react">
+<meta name="keywords" content="react,脚手架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="create-react-app">
 <meta property="og:url" content="http://luckyp.top/create-react-app/index.html">
@@ -139,7 +139,7 @@
 <meta property="og:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://luckyp.top/images/component-lifecycle.jpg">
-<meta property="og:updated_time" content="2020-05-28T09:30:06.995Z">
+<meta property="og:updated_time" content="2020-06-06T07:49:31.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="create-react-app">
 <meta name="twitter:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
@@ -260,16 +260,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
           </a>
         </li>
       
@@ -438,7 +428,7 @@
 
       
         <p>近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的<a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a>来配置环境。期间遇到不少问题。总结一下。<br><a id="more"></a></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>对于react来说，需要注意的就是它的生命周期问题，网上有大量的资料，一幅图简单的说明如下</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>对于react来说，需要注意的就是它的生命周期问题，网上有大量的资料，一幅图简单的说明如下</p>
 <p><img src="../images/component-lifecycle.jpg" alt="component-lifecycle.jpg"></p>
 <table>
 <thead>
@@ -501,7 +491,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>为了方便使用，<code>create-react-app</code>提供了直接暴露配置文件的方法,如下</p>
+<h2 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>为了方便使用，<code>create-react-app</code>提供了直接暴露配置文件的方法,如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run eject</span><br></pre></td></tr></table></figure>
 <p>当然是单向不可逆操作的，为了尽可能的减少改变源码的操作，使用了另外一种办法，通过<a href="https://github.com/timarney/react-app-rewired" target="_blank" rel="noopener">react-app-rewired</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-app-rewired --save-dev</span><br></pre></td></tr></table></figure>
@@ -568,6 +558,8 @@
         <div class="post-tags">
           
             <a href="/tags/react/" <i class="fa fa-tag"> react</a>
+          
+            <a href="/tags/脚手架/" <i class="fa fa-tag"> 脚手架</a>
           
         </div>
       
@@ -677,7 +669,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -699,7 +691,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -755,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#create-react-app"><span class="nav-number">2.</span> <span class="nav-text">create-react-app</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-pages部署"><span class="nav-number">2.2.</span> <span class="nav-text">github pages部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#homepage设置"><span class="nav-number">2.2.1.</span> <span class="nav-text">homepage设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目页面设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">项目页面设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由设置"><span class="nav-number">2.2.3.</span> <span class="nav-text">路由设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-react-app"><span class="nav-number">2.</span> <span class="nav-text">create-react-app</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-pages部署"><span class="nav-number">3.</span> <span class="nav-text">github pages部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#homepage设置"><span class="nav-number">3.1.</span> <span class="nav-text">homepage设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目页面设置"><span class="nav-number">3.2.</span> <span class="nav-text">项目页面设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由设置"><span class="nav-number">3.3.</span> <span class="nav-text">路由设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
@@ -789,7 +781,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">47.3k</span>
+    <span title="博客全站字数">48.8k</span>
   
 </div>
 
