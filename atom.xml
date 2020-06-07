@@ -57,9 +57,9 @@
       <category term="vue" scheme="http://luckyp.top/categories/vue/"/>
     
     
-      <category term="源码" scheme="http://luckyp.top/tags/%E6%BA%90%E7%A0%81/"/>
-    
       <category term="webpack" scheme="http://luckyp.top/tags/webpack/"/>
+    
+      <category term="源码" scheme="http://luckyp.top/tags/%E6%BA%90%E7%A0%81/"/>
     
       <category term="类型检测" scheme="http://luckyp.top/tags/%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B/"/>
     
@@ -481,9 +481,9 @@
       <category term="js" scheme="http://luckyp.top/categories/js/"/>
     
     
-      <category term="es6" scheme="http://luckyp.top/tags/es6/"/>
-    
       <category term="node" scheme="http://luckyp.top/tags/node/"/>
+    
+      <category term="es6" scheme="http://luckyp.top/tags/es6/"/>
     
       <category term="module" scheme="http://luckyp.top/tags/module/"/>
     

@@ -17,8 +17,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>源码</tag>
         <tag>webpack</tag>
+        <tag>源码</tag>
         <tag>类型检测</tag>
       </tags>
   </entry>
@@ -225,8 +225,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>node</tag>
+        <tag>es6</tag>
         <tag>module</tag>
       </tags>
   </entry>
