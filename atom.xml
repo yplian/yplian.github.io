@@ -187,9 +187,9 @@
       <category term="js" scheme="http://luckyp.top/categories/js/"/>
     
     
-      <category term="String" scheme="http://luckyp.top/tags/String/"/>
-    
       <category term="Number" scheme="http://luckyp.top/tags/Number/"/>
+    
+      <category term="String" scheme="http://luckyp.top/tags/String/"/>
     
       <category term="转换" scheme="http://luckyp.top/tags/%E8%BD%AC%E6%8D%A2/"/>
     
@@ -507,9 +507,9 @@
       <category term="工具" scheme="http://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="node" scheme="http://luckyp.top/tags/node/"/>
-    
       <category term="笔记" scheme="http://luckyp.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="node" scheme="http://luckyp.top/tags/node/"/>
     
   </entry>
   
