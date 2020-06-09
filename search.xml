@@ -82,8 +82,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>Number</tag>
         <tag>String</tag>
+        <tag>Number</tag>
         <tag>转换</tag>
       </tags>
   </entry>
@@ -238,8 +238,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>node</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -461,8 +461,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>Number</tag>
         <tag>String</tag>
+        <tag>Number</tag>
         <tag>转换</tag>
       </tags>
   </entry>
