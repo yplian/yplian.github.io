@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luckyp.top/nvm-Mac/</loc>
+    
+    <lastmod>2020-06-10T08:50:47.574Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luckyp.top/%E5%A5%BD%E7%94%A8%E7%9A%84css%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2020-06-09T03:28:08.716Z</lastmod>
@@ -296,14 +303,14 @@
   </url>
   
   <url>
-    <loc>http://luckyp.top/categories/index.html</loc>
+    <loc>http://luckyp.top/tags/index.html</loc>
     
     <lastmod>2020-05-28T09:30:07.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://luckyp.top/tags/index.html</loc>
+    <loc>http://luckyp.top/categories/index.html</loc>
     
     <lastmod>2020-05-28T09:30:07.000Z</lastmod>
     

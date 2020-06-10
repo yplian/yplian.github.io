@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://luckyp.top/nvm-Mac/</loc>
+    <lastmod>2020-06-10T08:50:47.574Z</lastmod>
+    <data>
+        <display>
+        <title>nvm-Mac</title>
+        <pubTime>2019-12-10T08:40:36.000Z</pubTime>
+        
+        <tag>nvm</tag>
+         
+        <tag>mac</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://luckyp.top/%E5%A5%BD%E7%94%A8%E7%9A%84css%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2020-06-09T03:28:08.716Z</lastmod>
     <data>
@@ -343,9 +362,9 @@
         
         <tag>脚手架</tag>
          
-        <tag>webpack</tag>
-         
         <tag>vue</tag>
+         
+        <tag>webpack</tag>
          
          
            
@@ -733,9 +752,9 @@
         <title>module</title>
         <pubTime>2017-11-14T16:00:00.000Z</pubTime>
         
-        <tag>es6</tag>
-         
         <tag>node</tag>
+         
+        <tag>es6</tag>
          
         <tag>module</tag>
          
