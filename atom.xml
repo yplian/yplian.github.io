@@ -261,9 +261,9 @@
     
       <category term="脚手架" scheme="http://luckyp.top/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
     
-      <category term="vue" scheme="http://luckyp.top/tags/vue/"/>
-    
       <category term="webpack" scheme="http://luckyp.top/tags/webpack/"/>
+    
+      <category term="vue" scheme="http://luckyp.top/tags/vue/"/>
     
   </entry>
   
@@ -503,9 +503,9 @@
       <category term="js" scheme="http://luckyp.top/categories/js/"/>
     
     
-      <category term="es6" scheme="http://luckyp.top/tags/es6/"/>
-    
       <category term="node" scheme="http://luckyp.top/tags/node/"/>
+    
+      <category term="es6" scheme="http://luckyp.top/tags/es6/"/>
     
       <category term="module" scheme="http://luckyp.top/tags/module/"/>
     
