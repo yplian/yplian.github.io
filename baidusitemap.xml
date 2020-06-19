@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://luckyp.top/git%E5%B8%B8%E7%94%A8/</loc>
+    <lastmod>2020-06-19T07:19:47.093Z</lastmod>
+    <data>
+        <display>
+        <title>git常用</title>
+        <pubTime>2017-03-29T16:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具" url="http://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://luckyp.top/nvm-Mac/</loc>
     <lastmod>2020-06-10T08:50:47.574Z</lastmod>
     <data>
@@ -196,9 +216,9 @@
         <title>进制转换</title>
         <pubTime>2017-01-07T16:00:00.000Z</pubTime>
         
-        <tag>String</tag>
-         
         <tag>Number</tag>
+         
+        <tag>String</tag>
          
         <tag>转换</tag>
          
@@ -242,9 +262,9 @@
         <title>类型转换</title>
         <pubTime>2019-03-11T16:00:00.000Z</pubTime>
         
-        <tag>String</tag>
-         
         <tag>Number</tag>
+         
+        <tag>String</tag>
          
         <tag>转换</tag>
          
@@ -610,26 +630,6 @@
            
              
               <breadCrumb title="js" url="http://luckyp.top/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://luckyp.top/git%E5%B8%B8%E7%94%A8/</loc>
-    <lastmod>2020-06-06T07:31:38.769Z</lastmod>
-    <data>
-        <display>
-        <title>git常用</title>
-        <pubTime>2017-03-29T16:00:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="http://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
