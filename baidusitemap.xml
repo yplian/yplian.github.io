@@ -216,9 +216,9 @@
         <title>进制转换</title>
         <pubTime>2017-01-07T16:00:00.000Z</pubTime>
         
-        <tag>Number</tag>
-         
         <tag>String</tag>
+         
+        <tag>Number</tag>
          
         <tag>转换</tag>
          
@@ -262,9 +262,9 @@
         <title>类型转换</title>
         <pubTime>2019-03-11T16:00:00.000Z</pubTime>
         
-        <tag>Number</tag>
-         
         <tag>String</tag>
+         
+        <tag>Number</tag>
          
         <tag>转换</tag>
          
@@ -752,9 +752,9 @@
         <title>module</title>
         <pubTime>2017-11-14T16:00:00.000Z</pubTime>
         
-        <tag>es6</tag>
-         
         <tag>node</tag>
+         
+        <tag>es6</tag>
          
         <tag>module</tag>
          
