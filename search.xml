@@ -64,8 +64,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -78,6 +78,15 @@
       <tags>
         <tag>vue</tag>
         <tag>动画</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac解决端口占用]]></title>
+    <url>%2FMac%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[非法关闭启用的服务，再次启用时，会提示接口被占用，需要进行以下步骤。 查看端口终端输入：lsof -i tcp:port 将port换成被占用的端口(如：8080、4000) 出现一个table表格数据，将会展示占用端口的进程信息 kill进程找到进程的PID,使用kill命令：kill PID（进程的PID，如2044），杀死对映的进程]]></content>
+      <tags>
+        <tag>Mac</tag>
+        <tag>服务</tag>
       </tags>
   </entry>
   <entry>
@@ -189,8 +198,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -244,8 +253,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>node</tag>
         <tag>es6</tag>
+        <tag>node</tag>
         <tag>module</tag>
       </tags>
   </entry>
