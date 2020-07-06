@@ -97,8 +97,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>promise</tag>
+        <tag>es6</tag>
         <tag>事件循环</tag>
       </tags>
   </entry>
@@ -110,8 +110,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>Number</tag>
         <tag>String</tag>
+        <tag>Number</tag>
         <tag>转换</tag>
       </tags>
   </entry>
@@ -136,8 +136,8 @@
       </categories>
       <tags>
         <tag>脚手架</tag>
-        <tag>webpack</tag>
         <tag>vue</tag>
+        <tag>webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -489,8 +489,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>Number</tag>
         <tag>String</tag>
+        <tag>Number</tag>
         <tag>转换</tag>
       </tags>
   </entry>
