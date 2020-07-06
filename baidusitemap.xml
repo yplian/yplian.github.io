@@ -233,9 +233,9 @@
         <title>Promise与setTimeOut</title>
         <pubTime>2019-04-02T16:00:00.000Z</pubTime>
         
-        <tag>promise</tag>
-         
         <tag>es6</tag>
+         
+        <tag>promise</tag>
          
         <tag>事件循环</tag>
          
@@ -257,9 +257,9 @@
         <title>类型转换</title>
         <pubTime>2019-03-11T16:00:00.000Z</pubTime>
         
-        <tag>String</tag>
-         
         <tag>Number</tag>
+         
+        <tag>String</tag>
          
         <tag>转换</tag>
          
@@ -914,9 +914,9 @@
         <title>进制转换</title>
         <pubTime>2017-01-07T16:00:00.000Z</pubTime>
         
-        <tag>String</tag>
-         
         <tag>Number</tag>
+         
+        <tag>String</tag>
          
         <tag>转换</tag>
          

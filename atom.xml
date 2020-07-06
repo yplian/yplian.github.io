@@ -229,9 +229,9 @@
       <category term="js" scheme="http://luckyp.top/categories/js/"/>
     
     
-      <category term="promise" scheme="http://luckyp.top/tags/promise/"/>
-    
       <category term="es6" scheme="http://luckyp.top/tags/es6/"/>
+    
+      <category term="promise" scheme="http://luckyp.top/tags/promise/"/>
     
       <category term="事件循环" scheme="http://luckyp.top/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
     
@@ -255,9 +255,9 @@
       <category term="js" scheme="http://luckyp.top/categories/js/"/>
     
     
-      <category term="String" scheme="http://luckyp.top/tags/String/"/>
-    
       <category term="Number" scheme="http://luckyp.top/tags/Number/"/>
+    
+      <category term="String" scheme="http://luckyp.top/tags/String/"/>
     
       <category term="转换" scheme="http://luckyp.top/tags/%E8%BD%AC%E6%8D%A2/"/>
     
