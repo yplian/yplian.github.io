@@ -819,28 +819,6 @@
 
     
   <url>
-    <loc>https://luckyp.top/babel/</loc>
-    <lastmod>2017-02-08T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>babel</title>
-        <pubTime>2017-02-08T16:00:00.000Z</pubTime>
-        
-        <tag>js</tag>
-         
-        <tag>Polyfill</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="https://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://luckyp.top/%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%AF%B9%E8%B1%A11/</loc>
     <lastmod>2017-02-08T16:00:00.000Z</lastmod>
     <data>
@@ -856,6 +834,28 @@
            
              
               <breadCrumb title="js" url="https://luckyp.top/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://luckyp.top/babel/</loc>
+    <lastmod>2017-02-08T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>babel</title>
+        <pubTime>2017-02-08T16:00:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>Polyfill</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具" url="https://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
