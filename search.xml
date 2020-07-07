@@ -64,8 +64,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -136,8 +136,8 @@
       </categories>
       <tags>
         <tag>脚手架</tag>
-        <tag>vue</tag>
         <tag>webpack</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -198,8 +198,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -253,8 +253,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>node</tag>
         <tag>es6</tag>
+        <tag>node</tag>
         <tag>module</tag>
       </tags>
   </entry>
