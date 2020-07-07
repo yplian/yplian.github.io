@@ -64,8 +64,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -198,8 +198,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -253,8 +253,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>node</tag>
+        <tag>es6</tag>
         <tag>module</tag>
       </tags>
   </entry>
