@@ -130,19 +130,19 @@
 
 
 
-<meta name="description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
+<meta name="description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。 项目基本完成，还有一些需要小优化。展示链接http://luckyp.top/cnode/，备用链接https://rcnode.luckyp.top/">
 <meta name="keywords" content="react,脚手架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="create-react-app">
 <meta property="og:url" content="https://luckyp.top/create-react-app/index.html">
 <meta property="og:site_name" content="远方">
-<meta property="og:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
+<meta property="og:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。 项目基本完成，还有一些需要小优化。展示链接http://luckyp.top/cnode/，备用链接https://rcnode.luckyp.top/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://luckyp.top/images/component-lifecycle.jpg">
 <meta property="og:updated_time" content="2018-05-23T07:21:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="create-react-app">
-<meta name="twitter:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。">
+<meta name="twitter:description" content="近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的create-react-app来配置环境。期间遇到不少问题。总结一下。 项目基本完成，还有一些需要小优化。展示链接http://luckyp.top/cnode/，备用链接https://rcnode.luckyp.top/">
 <meta name="twitter:image" content="https://luckyp.top/images/component-lifecycle.jpg">
 
 
@@ -405,7 +405,8 @@
       
 
       
-        <p>近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的<a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a>来配置环境。期间遇到不少问题。总结一下。<br><a id="more"></a></p>
+        <p>近期，趁着空闲时间，学习了下react的相关知识，对于配置问题，为了方便快速上手，就采用了官方的<a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a>来配置环境。期间遇到不少问题。总结一下。</p>
+<p>项目基本完成，还有一些需要小优化。展示链接<a href="http://luckyp.top/cnode/">http://luckyp.top/cnode/</a>，备用链接<a href="https://rcnode.luckyp.top/" target="_blank" rel="noopener">https://rcnode.luckyp.top/</a><br><a id="more"></a></p>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>对于react来说，需要注意的就是它的生命周期问题，网上有大量的资料，一幅图简单的说明如下</p>
 <p><img src="../images/component-lifecycle.jpg" alt="component-lifecycle.jpg"></p>
 <table>
@@ -488,7 +489,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> basename = process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'/cnode'</span> : <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> basename</span><br></pre></td></tr></table></figure>
 <p>因为需要部署到github，而GitHub Pages存在一个问题，不支持pushState引擎盖下使用HTML5 历史API的路由器（例如，使用React Router browserHistory）。因为在<code>https://myusername.github.io/project-name/topics</code>中,<code>/topics</code>属于前端部分，后端获取不到，会报404错误。</p>
 <p>这里有两种解决方式，一种就是通过重定向，当404时，跳转你设置好的页面，另一种就是使用<code>hashHistory</code>,不过存在的问题是，路径过长，这里我采用的是第二种方法。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>项目基本完成，还有一些需要小优化。展示链接<a href="http://luckyp.top/cnode/">http://luckyp.top/cnode/</a></p>
 
       
     </div>
@@ -716,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-react-app"><span class="nav-number">2.</span> <span class="nav-text">create-react-app</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-pages部署"><span class="nav-number">3.</span> <span class="nav-text">github pages部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#homepage设置"><span class="nav-number">3.1.</span> <span class="nav-text">homepage设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目页面设置"><span class="nav-number">3.2.</span> <span class="nav-text">项目页面设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由设置"><span class="nav-number">3.3.</span> <span class="nav-text">路由设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-react-app"><span class="nav-number">2.</span> <span class="nav-text">create-react-app</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-pages部署"><span class="nav-number">3.</span> <span class="nav-text">github pages部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#homepage设置"><span class="nav-number">3.1.</span> <span class="nav-text">homepage设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目页面设置"><span class="nav-number">3.2.</span> <span class="nav-text">项目页面设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由设置"><span class="nav-number">3.3.</span> <span class="nav-text">路由设置</span></a></li></ol></li></ol></div>
             
 
           </div>
