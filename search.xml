@@ -253,8 +253,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>node</tag>
         <tag>es6</tag>
+        <tag>node</tag>
         <tag>module</tag>
       </tags>
   </entry>
