@@ -64,8 +64,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -198,8 +198,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -253,8 +253,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>node</tag>
+        <tag>es6</tag>
         <tag>module</tag>
       </tags>
   </entry>
@@ -434,18 +434,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[babel]]></title>
-    <url>%2Fbabel%2F</url>
-    <content type="text"><![CDATA[babel简单使用。 官网介绍的很详细，官网地址http://babeljs.io/. .babelrc一般需要配置文件.babelrc配合使用。基本格式: 12345## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;es2015&quot;,&quot;react&quot;,...otherRules], &quot;plugins&quot;: []&#125; babel-cli安装指令如下，可以使用指令编译文件 1npm install --global babel-cli 简单用法 12345678910111213# 编译单个文件$ babel index.js# 转码结果写入一个文件 --out-file/-o$ babel index.js --out-file outfile.js$ babel index.js -o outfile.js# 整个目录转码 --out-dir/-d$ babel src --out-dir lib$ babel src -d lib# 生成source map -s$ babel src -d lib -s babel-preset-envbabel可以安装官方的预编译配置，也可以自定义。具体包含什么功能，详见官方文档。 1234567## 下载安装npm install --save-dev babel-preset-env## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;env&quot;]&#125; babel-polyfill由于Babel只转换语法（如箭头函数），因此可以使用babel-polyfill来支持Promise或新的本地方法（如String.padStart（左键））等新的全局变量。 1npm install --save-dev babel-polyfill 在线编译官网地址http://babeljs.io/repl/]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>Polyfill</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[高程笔记-对象1]]></title>
     <url>%2F%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%AF%B9%E8%B1%A11%2F</url>
     <content type="text"><![CDATA[《JavaScript高级程序》笔记，主要关于对象属性以及对象的创建方式。 最简单的创建方式是通过Object。 12345678var person = new Object();person.name = "xiaoming";person.age = "12";person.job = "student";person.sayName = function()&#123; console.log(this.name);&#125; 属性类型属性分类ECMA-262定义描述内部特性，有两种（只能为其中一种），如下： 数据属性 访问器属性 [[ Configurable ]] [[ Configurable ]] [[ Enumerable ]] [[ Enumerable ]] [[ Writable ]] [[ Value ]] [[ Get ]] [[ Set ]] [[ Configurable ]]：表示能否被delete删除重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。 [[ Enumerable ]]：表示能否被for-in循环返回属性。 [[ Writable ]]：表示能否修改属性的值。 [[ Value ]]：包含这个属性的数据值。读取属性值时，从这个位置读取；写入属性值的时候，把新值保存在这个位置。默认undefined。 [[ Get ]]：在读取属性时掉用的函数。默认值为undefined。 [[ Set ]]：在写入属性时掉用的函数。默认值为undefined。 设置默认属性需要es5的Object.definedProperty()方法。例如： 1234567891011121314151617181920212223var person = &#123;&#125;;Object.definedProperty(person,'name',&#123; writable : false, value: 'xiaoMing'&#125;);console.log(person.name); // 'xiaoMing'person.name = 'xiaoHong';console.log(person.name); // 'xiaoMing'Object.definedProperty(person,'name',&#123; configurable : false, value: 'xiaoMing'&#125;);console.log(person.name); // 'xiaoMing'person.name = 'xiaoHong';console.log(person.name); // 'xiaoMing'// 报错Object.definedProperty(person,'name',&#123; configurable : true, value: 'xiaoMing'&#125;); 单属性定义1234567891011121314151617var book = &#123; _year: 2004, edition: 1&#125;Object.definedProperty(book,'year',&#123; get: function ()&#123; return this._year; &#125;, set: function(newValue)&#123; if( newValue &gt; 2004 )&#123; this._year = newValue; this.edition += newValue - 2004; &#125; &#125;&#125;);book.year = 2005;console.log( book.edition ) //2 多属性定义123456789101112131415161718192021222324var book = &#123; &#125;;Object.definedProperties(book,&#123; _year：&#123; value: 2004 &#125;, edition: &#123; value: 1 &#125;, year: &#123; get: function ()&#123; return this._year; &#125;, set: function(newValue)&#123; if( newValue &gt; 2004 )&#123; this._year = newValue; this.edition += newValue - 2004; &#125; &#125; &#125;&#125;);var descriptor = Object.getOwnPropertyDescriptor(book,"_year");alert(descriptor.value) //2004alert(descriptor.configurable) //false 创建对象工厂模式对象的识别不明确。 123456789101112function createPerson(name,age,job) &#123; var o = new Object(); o.name = name; o.age = age; o.job = job; o.sayName =function()&#123; alert(this.name); &#125; return o;&#125;var person1 = createPerson('Nicholas','29','teacher');var person2 = createPerson('Greg','19','student'); 构造函数模式方法的重复创建，即每个实例上面都会创建一个方法。如下例中，person1和person2都含有sayName()的方法。如果将sayName()单独提取出来，当方法很多的时候，就会出现污染全局变量的问题。 12345678910function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; this.sayName =function()&#123; alert(this.name); &#125;&#125;var person1 = new Person('Nicholas','29','teacher');var person2 = new Person('Greg','19','student'); 原型模式解决了方法会污染环境变量的问题，但是对于数组、对象这种引用类型，可能会出现如下例的问题。虽然friends属性不同，但是指向的同一地址，从而影响其它实例。 123456789101112131415161718192021function Person() &#123;&#125;Person.prototype = &#123; name: 'Nicholas', age:'29', job:'teacher', friends:['lucy','jon','angus'], sayName: function()&#123; alert(this.name); &#125;&#125;var person1 = new Person();person1.sayName() // 'Nicholas'var person2 = new Person();person2.sayName() // 'Nicholas'person1.friends.push('van');alert(person1.friends); //'lucy','jon','angus'alert(person2.friends); //'lucy','jon','angus'alert(person1.friends === person2.friends); //true 组合构造函数和原型模式常用的一种创建方式。 12345678910111213141516171819function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; this.friends = ['lucy','jon','angus'];&#125;Person.prototype = &#123; constructor: Person, sayName: function()&#123; alert(this.name); &#125;&#125;var person1 = new Person('Nicholas','29','teacher');var person2 = new Person('Greg','19','student');person1.friends.push('van');alert(person1.friends); //'lucy','jon','angus'alert(person2.friends); //'lucy','jon'alert(person1.friends === person2.friends); //false 动态原型模式初次执行函数时，会触发判断。原型不能使用字面量的模式创建，相当于重写，会出现丢失构造函数的问题。 12345678910function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; if (typeof this.sayName != 'function' )&#123; Person.prototpe.sayName = function()&#123; alert(this.name); &#125;; &#125;&#125; 稳妥构造函数模式name只能由sayName()函数访问属性，通过提供安全性，特殊情况使用。 123456789function Person(name,age,job) &#123; var o = new Object(); o.sayName = function()&#123; alert(name); &#125;; return o;&#125;var person1 = Person('Nicholas','29','teacher');person1.sayName(); // Nicholas]]></content>
@@ -455,6 +443,18 @@
       <tags>
         <tag>笔记</tag>
         <tag>Object</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[babel]]></title>
+    <url>%2Fbabel%2F</url>
+    <content type="text"><![CDATA[babel简单使用。 官网介绍的很详细，官网地址http://babeljs.io/. .babelrc一般需要配置文件.babelrc配合使用。基本格式: 12345## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;es2015&quot;,&quot;react&quot;,...otherRules], &quot;plugins&quot;: []&#125; babel-cli安装指令如下，可以使用指令编译文件 1npm install --global babel-cli 简单用法 12345678910111213# 编译单个文件$ babel index.js# 转码结果写入一个文件 --out-file/-o$ babel index.js --out-file outfile.js$ babel index.js -o outfile.js# 整个目录转码 --out-dir/-d$ babel src --out-dir lib$ babel src -d lib# 生成source map -s$ babel src -d lib -s babel-preset-envbabel可以安装官方的预编译配置，也可以自定义。具体包含什么功能，详见官方文档。 1234567## 下载安装npm install --save-dev babel-preset-env## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;env&quot;]&#125; babel-polyfill由于Babel只转换语法（如箭头函数），因此可以使用babel-polyfill来支持Promise或新的本地方法（如String.padStart（左键））等新的全局变量。 1npm install --save-dev babel-polyfill 在线编译官网地址http://babeljs.io/repl/]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>Polyfill</tag>
       </tags>
   </entry>
   <entry>
