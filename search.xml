@@ -4,6 +4,9 @@
     <title><![CDATA[巧用a标签解析url]]></title>
     <url>%2F%E5%B7%A7%E7%94%A8a%E6%A0%87%E7%AD%BE%E8%A7%A3%E6%9E%90url%2F</url>
     <content type="text"><![CDATA[重构旧有项目，遇到的比较有意思的点，对于url的解析，并不单单可以通过字符串分割和正则的方式，通过a标签，可以更快捷的做到某些点。 假设现在要解析的网址 url=&quot;https://luckyp.top/alinkurl/?id=1#name=haha&quot;; 1234567891011121314const alink = document.createElement("a"); // 创建一个a标签alink.href = url; // 将url设置为a标签的href属性，console.log(alink.protocol); // 取协议 ===》https:console.log(alink.hostname); // 取服务器主机===》luckyp.topconsole.log(alinkpathname); // 取查询路径===》/alinkurlconsole.log(alink.search); // 取查询参数===》?id=1console.log(alink.hash); // 取#===》#name=haha]]></content>
+      <tags>
+        <tag>url</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[.npmrc相关]]></title>
