@@ -20,7 +20,7 @@
   <entry>
     <title><![CDATA[常用的视频格式mime]]></title>
     <url>%2F%E5%B8%B8%E7%94%A8%E7%9A%84%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8Fmime%2F</url>
-    <content type="text"><![CDATA[新的需求，产生新的项目，新的项目产生新的问题。对于video视频类型格式的minmeType设置，仅此备忘。 flv格式是加入关联扩展名：.flv，内容类型：application/octet-stream f4v格式是扩展名：.f4v，内容类型：application/octet-stream mp4格式是扩展名：.mp4，内容类型：video/mp4 ogv格式是扩展名：.ogv ，内容类型：video/ogg webm格式是扩展名：.webm，内容类型：video/webm]]></content>
+    <content type="text"><![CDATA[新的需求，产生新的项目，新的项目产生新的问题。对于video视频类型格式的mimeType设置，仅此备忘。 flv格式是加入关联扩展名：.flv，内容类型：application/octet-stream f4v格式是扩展名：.f4v，内容类型：application/octet-stream mp4格式是扩展名：.mp4，内容类型：video/mp4 ogv格式是扩展名：.ogv ，内容类型：video/ogg webm格式是扩展名：.webm，内容类型：video/webm]]></content>
       <tags>
         <tag>video</tag>
         <tag>mime</tag>
@@ -279,8 +279,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>node</tag>
         <tag>es6</tag>
+        <tag>node</tag>
         <tag>module</tag>
       </tags>
   </entry>
