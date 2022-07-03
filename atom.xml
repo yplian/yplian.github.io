@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luckyp.top/"/>
-  <updated>2020-11-03T15:43:27.000Z</updated>
+  <updated>2021-01-03T10:22:31.000Z</updated>
   <id>https://luckyp.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随机数组</title>
+    <link href="https://luckyp.top/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%BB%84/"/>
+    <id>https://luckyp.top/随机数组/</id>
+    <published>2021-01-03T10:22:31.000Z</published>
+    <updated>2021-01-03T10:22:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>随机化Javascript数组（随机播放）。</p><a id="more"></a><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.shuffle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="keyword">this</span>.length, j, temp;</span><br><span class="line">  <span class="keyword">if</span> ( i == <span class="number">0</span> ) <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">while</span> ( --i ) &#123;</span><br><span class="line">     j = <span class="built_in">Math</span>.floor( <span class="built_in">Math</span>.random() * ( i + <span class="number">1</span> ) );</span><br><span class="line">     temp = <span class="keyword">this</span>[i];</span><br><span class="line">     <span class="keyword">this</span>[i] = <span class="keyword">this</span>[j];</span><br><span class="line">     <span class="keyword">this</span>[j] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 优化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffleArray</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = array.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">var</span> j = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (i + <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">var</span> temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩上一版</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffleArray</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> c = d.length - <span class="number">1</span>; c &gt; <span class="number">0</span>; c--) &#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (c + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">var</span> a = d[c];</span><br><span class="line">    d[c] = d[b];</span><br><span class="line">    d[b] = a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> d</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffleArray</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = array.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">const</span> j = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (i + <span class="number">1</span>));</span><br><span class="line">        [array[i], array[j]] = [array[j], array[i]];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 underscore.js 库</span></span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">"underscore"</span>);</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> testShuffle = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> indexOne = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> stObj = &#123;</span><br><span class="line">      <span class="string">'0'</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="string">'1'</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">'2'</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="string">'3'</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="string">'4'</span>: <span class="number">4</span>,</span><br><span class="line">      <span class="string">'5'</span>: <span class="number">5</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">      arr = _.shuffle(arr);</span><br><span class="line">      indexOne = _.indexOf(arr, <span class="number">1</span>);</span><br><span class="line">      stObj[indexOne] ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(stObj);</span><br><span class="line">&#125;;</span><br><span class="line">testShuffle();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随机化Javascript数组（随机播放）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="https://luckyp.top/tags/js/"/>
+    
+      <category term="Array" scheme="https://luckyp.top/tags/Array/"/>
+    
+  </entry>
   
   <entry>
     <title>巧用a标签解析url</title>
@@ -171,9 +193,9 @@
       <category term="js" scheme="https://luckyp.top/categories/js/"/>
     
     
-      <category term="文件" scheme="https://luckyp.top/tags/%E6%96%87%E4%BB%B6/"/>
-    
       <category term="vue" scheme="https://luckyp.top/tags/vue/"/>
+    
+      <category term="文件" scheme="https://luckyp.top/tags/%E6%96%87%E4%BB%B6/"/>
     
       <category term="Blob" scheme="https://luckyp.top/tags/Blob/"/>
     
@@ -371,9 +393,9 @@
     
       <category term="脚手架" scheme="https://luckyp.top/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
     
-      <category term="webpack" scheme="https://luckyp.top/tags/webpack/"/>
-    
       <category term="vue" scheme="https://luckyp.top/tags/vue/"/>
+    
+      <category term="webpack" scheme="https://luckyp.top/tags/webpack/"/>
     
   </entry>
   
@@ -471,34 +493,6 @@
       <category term="http" scheme="https://luckyp.top/tags/http/"/>
     
       <category term="跨域" scheme="https://luckyp.top/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vscode插件</title>
-    <link href="https://luckyp.top/vscode%E6%8F%92%E4%BB%B6/"/>
-    <id>https://luckyp.top/vscode插件/</id>
-    <published>2018-03-06T16:00:00.000Z</published>
-    <updated>2020-03-06T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>备忘一下Visual Studio Code经常使用的插件，便于日后食用。<br><a id="more"></a></p><h2 id="vscode安装"><a href="#vscode安装" class="headerlink" title="vscode安装"></a>vscode安装</h2><p>在Windows系统下，通过<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">官方链接地址</a>下载相应的版本。一路默认安装，注意在点击下一步的时候，是否<strong>勾选配置环境变量</strong>，默认勾选。</p><h2 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h2><p>顺序按A-Z排。比较好用的插件加粗显示。扩展高亮智能提示插件自行选择。</p><ul><li>any-rule: 常用正则</li><li><del>Auto Rename Tag : 自动更换html的对应标签</del></li><li>Auto Close Tag : 自动闭合标签（存在有一定的小问题）</li><li>Autoprefixer : css自动补全兼容写法，一般 F1 键，指令Autoprefixer CSS</li><li><strong>Beautify</strong> : 格式化文件，一般 F1 键，指令Beautify file</li><li>Better Comments : 编写更加人性化的注释</li><li><strong>Bracket Pair Colorizer</strong> : 用颜色标识匹配的括号</li><li>Bootstrap 3 Snippets : Bootstrap 3扩展智能提示</li><li><strong>Chinese (Simplified) Language Pack for Visual Studio Code</strong> : 1.23版本之后，语言需要通过包的方式安装。（2018/5/4补充）</li><li>Code Spell Checker : 单词拼写检查</li><li><strong>Debugger for Chrome</strong> : 静态文件chrome调试</li><li><strong>Document This</strong> : 注释文档自动生成</li><li>DotENV : .env文件高亮</li><li>Dracula Theme : 主题</li><li><strong>EditorConfig for VS Code</strong> : .editorconfig的支持插件。</li><li><strong>ESLint</strong> : 静态代码检查</li><li>filesize : 在底部状态栏显示当前文件大小，点击后还可以看到详细创建、修改时间</li><li><strong>Git History</strong> : git历史</li><li><strong>GitLens</strong> : git日志插件</li><li><strong>HTML CSS Support</strong> : html标签上智能提示当前项目所支持的样式class和scss名</li><li><strong>HTML Snippets</strong> : HTML5代码片段以及提示</li><li><strong>HTMLHint</strong> : html代码检测</li><li>IntelliSense for CSS class names in HTML : html标签上智能提示当前项目所支持的样式class名</li><li><del>JavaScript Atom Grammar : 扩展vscode代码中的js语法替换Atom编辑器中的js语法</del></li><li><del>Import Cost : 成本提示</del></li><li>jQuery Code Snippets : jQuery扩展智能提示</li><li>JS JSX Snippets : JS,JSX,TS扩展智能提示</li><li><strong>Live Server</strong> : 起本地服务，右键菜单</li><li>markdownlint : markdown语法检测</li><li><strong>npm</strong> : npm指令扩展</li><li><strong>npm intellisense</strong> : 提示npm模块引用</li><li><strong>OneDark-Pro</strong> :  比较喜欢的主题</li><li>Path Autocomplete : 路径补全</li><li><del>Path Intellisense : 文件路径智能提示</del></li><li><strong>Project Manager</strong> : 多个项目快速切换</li><li>REST Client : 功能类似postman，但更强大</li><li>Sass : Sass高亮，自动补全，智能提示</li><li><strong>Settings Sync VSCode</strong> : 设置同步到Gist(可同步插件，用户配置项。)</li><li>StandardJS - JavaScript Standard Style : 代码格式StandardJS</li><li>Sublime Babel : babel语法高亮，智能提示</li><li><strong>Vetur</strong> : vue语法高亮，注释，扩展等</li><li>View In Browser : files协议打开文件在浏览器</li><li>vscode-fileheader : 顶部注释模板</li><li><strong>vscode-icons</strong> : icons图标</li><li><del>Vue 2 Snippets : vue2扩展智能提示</del></li><li>VueHelper : snippets for Vue,Vue-router</li><li>x-translator : 一键翻译、命名规则、替换。</li></ul><h2 id="Eslint配置"><a href="#Eslint配置" class="headerlink" title="Eslint配置"></a>Eslint配置</h2><p>VSCode 扩展设置，依次点击 文件 &gt; 首选项 &gt; 设置 打开 VSCode 配置文件,添加如下配置，这样<br>每次保存的时候就可以根据根目录下.eslintrc.js你配置的eslint规则来检查和做一些简单的fix。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"eslint.validate"</span>: [</span><br><span class="line">        <span class="string">"javascript"</span>,</span><br><span class="line">        <span class="string">"javascriptreact"</span>,</span><br><span class="line">        <span class="string">"html"</span>,</span><br><span class="line">        &#123; <span class="string">"language"</span>: <span class="string">"vue"</span>, <span class="string">"autoFix"</span>: <span class="literal">true</span> &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"eslint.options"</span>: &#123;</span><br><span class="line">        <span class="string">"plugins"</span>: [<span class="string">"html"</span>]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;备忘一下Visual Studio Code经常使用的插件，便于日后食用。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="编辑器" scheme="https://luckyp.top/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-      <category term="vscode" scheme="https://luckyp.top/tags/vscode/"/>
-    
-      <category term="插件" scheme="https://luckyp.top/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="eslint" scheme="https://luckyp.top/tags/eslint/"/>
     
   </entry>
   
