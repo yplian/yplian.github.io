@@ -130,16 +130,17 @@
 
 
 
-<meta name="description" content="世界上有10种人,一种人懂二进制,一种人不懂。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="远方">
-<meta property="og:url" content="https://luckyp.top/archives/2019/07/index.html">
+<meta name="description" content="常见的类型检测的分为以下几种，优缺点各不相同。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型检测">
+<meta property="og:url" content="https://luckyp.top/数据类型检测/index.html">
 <meta property="og:site_name" content="远方">
-<meta property="og:description" content="世界上有10种人,一种人懂二进制,一种人不懂。">
+<meta property="og:description" content="常见的类型检测的分为以下几种，优缺点各不相同。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-06-19T03:37:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="远方">
-<meta name="twitter:description" content="世界上有10种人,一种人懂二进制,一种人不懂。">
+<meta name="twitter:title" content="数据类型检测">
+<meta name="twitter:description" content="常见的类型检测的分为以下几种，优缺点各不相同。">
 
 
 
@@ -169,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="https://luckyp.top/archives/2019/07/">
+  <link rel="canonical" href="https://luckyp.top/数据类型检测/">
 
 
 
 
 
-  <title>归档 | 远方</title>
+  <title>数据类型检测 | 远方</title>
   
 
 
@@ -204,7 +205,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -320,71 +321,219 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        好! 目前共计 56 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://luckyp.top/数据类型检测/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luckyp">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远方">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Mac解决端口占用/" itemprop="url">
-              
-                <span itemprop="name">Mac解决端口占用</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">数据类型检测</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-06T10:07:19+08:00" content="2019-07-06">
-          07-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-19T11:37:08+08:00">
+                2022-06-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>常见的类型检测的分为以下几种，优缺点各不相同。<br><a id="more"></a></p>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>typeof 对于原始类型来说，除了 null 都可以显示正确的类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">2</span>);               <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>);            <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'str'</span>);           <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> []);              <span class="comment">// object     []数组的数据类型在 typeof 中被解释为 object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);    <span class="comment">// function</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> &#123;&#125;);              <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">undefined</span>);       <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>);            <span class="comment">// object     null 的数据类型被 typeof 解释为 object</span></span><br></pre></td></tr></table></figure>
+<p>typeof 对于对象来说，除了函数都会显示 object，所以说 typeof 并不能准确判断变量到底是什么类型,所以想判断一个对象的正确类型，这时候可以考虑使用 instanceof</p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的 prototype</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span> <span class="keyword">instanceof</span> <span class="built_in">Number</span>);                    <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> <span class="keyword">instanceof</span> <span class="built_in">Boolean</span>);                <span class="comment">// false </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'str'</span> <span class="keyword">instanceof</span> <span class="built_in">String</span>);                <span class="comment">// false  </span></span><br><span class="line"><span class="built_in">console</span>.log([] <span class="keyword">instanceof</span> <span class="built_in">Array</span>);                    <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="keyword">instanceof</span> <span class="built_in">Function</span>);       <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;&#125; <span class="keyword">instanceof</span> <span class="built_in">Object</span>);                   <span class="comment">// true    </span></span><br><span class="line"><span class="comment">// console.log(undefined instanceof Undefined);</span></span><br><span class="line"><span class="comment">// console.log(null instanceof Null);</span></span><br></pre></td></tr></table></figure>
+<p>instanceof 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型；<br>而 typeof 也存在弊端，它虽然可以判断基础数据类型（null 除外），但是引用数据类型中，除了 function 类型以外，其他的也无法判断</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们也可以试着实现一下 instanceof</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_instanceof</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 由于instance要检测的是某对象，需要有一个前置判断条件</span></span><br><span class="line">  <span class="comment">//基本数据类型直接返回false</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> left !== <span class="string">'object'</span> || left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获得类型的原型</span></span><br><span class="line">  <span class="keyword">let</span> prototype = right.prototype</span><br><span class="line">  <span class="comment">// 获得对象的原型</span></span><br><span class="line">  left = left.__proto__</span><br><span class="line">  <span class="comment">// 判断对象的类型是否等于类型的原型</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left === <span class="literal">null</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">if</span> (prototype === left)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    left = left.__proto__</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'test'</span>, _instanceof(<span class="literal">null</span>, <span class="built_in">Array</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'test'</span>, _instanceof([], <span class="built_in">Array</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'test'</span>, _instanceof(<span class="string">''</span>, <span class="built_in">Array</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'test'</span>, _instanceof(&#123;&#125;, <span class="built_in">Object</span>)) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((<span class="number">2</span>).constructor === <span class="built_in">Number</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">true</span>).constructor === <span class="built_in">Boolean</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="string">'str'</span>).constructor === <span class="built_in">String</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(([]).constructor === <span class="built_in">Array</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;).constructor === <span class="built_in">Function</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log((&#123;&#125;).constructor === <span class="built_in">Object</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如果创建一个对象，更改它的原型，constructor就会变得不可靠了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"> </span><br><span class="line">Fn.prototype=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> f=<span class="keyword">new</span> Fn();</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(f.constructor===Fn);    <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(f.constructor===<span class="built_in">Array</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Object-prototype-toString-call"><a href="#Object-prototype-toString-call" class="headerlink" title="Object.prototype.toString.call()"></a>Object.prototype.toString.call()</h2><p>toString() 是 Object 的原型方法，调用该方法，可以统一返回格式为 “[object Xxx]” 的字符串，其中 Xxx 就是对象的类型。对于 Object 对象，直接调用 toString() 就能返回 [object Object]；而对于其他对象，则需要通过 call 来调用，才能返回正确的类型信息。我们来看一下代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString(&#123;&#125;)       <span class="comment">// "[object Object]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;)  <span class="comment">// 同上结果，加上call也ok</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>)    <span class="comment">// "[object Number]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">'1'</span>)  <span class="comment">// "[object String]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>)  <span class="comment">// "[object Boolean]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)  <span class="comment">// "[object Function]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>)   <span class="comment">//"[object Null]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) <span class="comment">//"[object Undefined]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="regexp">/123/g</span>)    <span class="comment">//"[object RegExp]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()) <span class="comment">//"[object Date]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call([])       <span class="comment">//"[object Array]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">document</span>)  <span class="comment">//"[object HTMLDocument]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">window</span>)   <span class="comment">//"[object Window]"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 从上面这段代码可以看出，Object.prototype.toString.call() 可以很好地判断引用类型，甚至可以把 document 和 window 都区分开来。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeOf1</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> type  = <span class="keyword">typeof</span> obj;</span><br><span class="line">  <span class="keyword">if</span> (type !== <span class="string">"object"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> type;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj).replace(<span class="regexp">/^\[object (\S+)\]$/</span>, <span class="string">'$1'</span>);  <span class="comment">// 注意正则中间有个空格</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeOf2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj).slice(<span class="number">8</span>, <span class="number">-1</span>).toLowerCase()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>typeof<ul>
+<li>直接在计算机底层基于数据类型的值（二进制）进行检测</li>
+<li>typeof null为object 原因是对象存在在计算机中，都是以000开始的二进制存储，所以检测出来的结果是对象</li>
+<li>typeof 普通对象/数组对象/正则对象/日期对象 都是object</li>
+<li>typeof NaN === ‘number’</li>
+</ul>
+</li>
+<li>instanceof<ul>
+<li>检测当前实例是否属于这个类的</li>
+<li>底层机制：只要当前类出现在实例的原型上，结果都是true</li>
+<li>不能检测基本数据类型</li>
+</ul>
+</li>
+<li>constructor<ul>
+<li>支持基本类型</li>
+<li>constructor可以随便改，也不准</li>
+</ul>
+</li>
+<li>Object.prototype.toString.call([val])<ul>
+<li>返回当前实例所属类信息</li>
+</ul>
+</li>
+</ul>
+<p>判断 Target 的类型，单单用 typeof 并无法完全满足，这其实并不是 bug，本质原因是 JS 的万物皆对象的理论。因此要真正完美判断时，我们需要区分对待:</p>
+<ul>
+<li>基本类型(null): 使用 String(null)</li>
+<li>基本类型(string / number / boolean / undefined) + function: - 直接使用 typeof即可</li>
+<li>其余引用类型(Array / Date / RegExp Error): 调用toString后根据[object XXX]进行判断</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #666;font-size:14px;">------本文结束 <i class="fa fa-paw"></i> 感谢阅读------</div>
+        
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    luckyp
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://luckyp.top/数据类型检测/" title="数据类型检测">https://luckyp.top/数据类型检测/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/原生js手写/" rel="next" title="原生js手写">
+                <i class="fa fa-chevron-left"></i> 原生js手写
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a67e93b36b300ba" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -392,6 +541,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -412,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -489,6 +651,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-prototype-toString-call"><span class="nav-number">4.</span> <span class="nav-text">Object.prototype.toString.call()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -648,6 +826,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
