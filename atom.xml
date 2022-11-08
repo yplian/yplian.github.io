@@ -143,7 +143,7 @@
     <link href="https://luckyp.top/z-index%E5%B1%82%E7%BA%A7%E7%82%B9%E5%87%BB%E9%97%AE%E9%A2%98/"/>
     <id>https://luckyp.top/z-index层级点击问题/</id>
     <published>2021-03-21T14:42:58.000Z</published>
-    <updated>2020-03-21T14:42:58.000Z</updated>
+    <updated>2021-03-21T14:42:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>两个弹出层，第一个层级高于第二个层级，想触发第二个层级的点击事件<br><a id="more"></a></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>对上层元素使用以下属性，可穿透点击层</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pointer-events: none;</span><br></pre></td></tr></table></figure><p>如果想让上层元素的子元素部分可点击，在可点击的元素上添加</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pointer-events: auto;</span><br></pre></td></tr></table></figure>]]></content>
     
