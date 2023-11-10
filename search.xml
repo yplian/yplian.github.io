@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[Docker简要]]></title>
     <url>%2FDocker%E7%AE%80%E8%A6%81%2F</url>
-    <content type="text"><![CDATA[介绍Docker基本使用方法，附带实现在Docker中运行前端项目开发环境的方法。 下载新手推荐下载桌面版，可视化操作更简单，很多指令可以通过可视化进行。下载地址。 Docker命令建议通过docker 指令名称 --help查看详细的指令信息。这里简单列举大概有哪些。 简单示例1234567891011121314# 下载 redis 镜像docker pull redis # 根据 reids 镜像生成端口从内部6378映射到外部6379的容器，其名为 myredisdocker run -itd --name myredis -p 6378:6379 redis# 查看当前的容器，获取CONTAINER IDdocker ps # 根据容器id，进入容器内部docker exec -it CONTAINERID bash/sh# 重启/停止容器docker restart/stop CONTAINERID# 根据容器id，删除容器docker rm -f CONTAINERID# 删除本地redis镜像docker rmi redis 容器生命周期1234567891011121314151617181920212223242526272829303132333435# 创建一个新的容器并运行一个命令 # -t: 在新容器内指定一个伪终端或终端。# -i: 允许你对容器内的标准输入 (STDIN) 进行交互# -d: 后台运行docker run [OPTIONS] IMAGE [COMMAND] [ARG...]docker run -itd --name customName -p 3000:3000 nginx:latest# 启动一个或多个已经被停止的容器docker start [OPTIONS] CONTAINER [CONTAINER...]# 停止一个运行中的容器docker stop [OPTIONS] CONTAINER [CONTAINER...]# 重启容器docker restart [OPTIONS] CONTAINER [CONTAINER...]# 杀掉一个运行中的容器docker kill [OPTIONS] CONTAINER [CONTAINER...]docker kill mynginx# 删除一个或多个容器docker rm [OPTIONS] CONTAINER [CONTAINER...]# 暂停容器中所有的进程docker pause CONTAINER [CONTAINER...]# 恢复容器中所有的进程docker unpause CONTAINER [CONTAINER...]# 创建一个新的容器但不启动它，语法同rundocker create [OPTIONS] IMAGE [COMMAND] [ARG...]# 在运行的容器中执行命令docker exec [OPTIONS] CONTAINER COMMAND [ARG...]docker exec -it xxxid bash/sh 容器操作12345678910111213141516171819202122232425262728293031# 列出容器 docker ps [OPTIONS]docker ps -a# 获取容器/镜像的元数据docker inspect [OPTIONS] NAME|ID [NAME|ID...]docker inspect mysql:5.6# 查看容器中运行的进程信息，支持 ps 命令参数docker top [OPTIONS] CONTAINER [ps OPTIONS]# 连接到正在运行中的容器docker attach [OPTIONS] CONTAINER # 从服务器获取实时事件docker events [OPTIONS]# 获取容器的日志docker logs [OPTIONS] CONTAINER# 阻塞运行直到容器停止，然后打印出它的退出代码docker wait [OPTIONS] CONTAINER [CONTAINER...]# 将文件系统作为一个tar归档文件导出到STDOUTdocker export [OPTIONS] CONTAINER# 用于列出指定的容器的端口映射，或者查找将 PRIVATE_PORT NAT 到面向公众的端口docker port [OPTIONS] CONTAINER [PRIVATE_PORT/PROTO]# 显示容器资源的使用情况，包括：CPU、内存、网络 I/O等docker stats [OPTIONS] [CONTAINER...] 容器rootfs命令12345678# 从容器创建一个新的镜像docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]# 用于容器与主机之间的数据拷贝docker cp # 检查容器里文件结构的更改docker diff [OPTIONS] CONTAINER 镜像仓库12345678910111213# 登陆/登出到一个Docker镜像仓库docker login/logout [OPTIONS] [SERVER]# 从镜像仓库中拉取或者更新指定镜像docker pull [OPTIONS] NAME[:TAG|@DIGEST]docker pull ngnix# 将本地的镜像上传到镜像仓库,要先登陆到镜像仓库docker push [OPTIONS] NAME[:TAG]docker push myimage:v1# 从Docker Hub查找镜像docker search [OPTIONS] TERM 镜像指令123456789101112131415161718192021222324252627282930# 列出本地镜像docker images [OPTIONS] [REPOSITORY[:TAG]]# 删除本地一个或多个镜像docker rmi [OPTIONS] IMAGE [IMAGE...]# 标记本地镜像，将其归入某一仓库docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]# 命令用于使用 Dockerfile 创建镜像docker build [OPTIONS] PATH | URL | -docker build -t imgageName .# 查看指定镜像的创建历史docker history [OPTIONS] IMAGE# 将指定镜像保存成 tar 归档文件docker save [OPTIONS] IMAGE [IMAGE...]# 导入使用 docker save 命令导出的镜像docker load [OPTIONS]# 从归档文件中创建镜像docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]# 显示 Docker 系统信息，包括镜像和容器数docker info [OPTIONS]# 显示 Docker 版本信息docker version [OPTIONS] Dockerfile创建一个名字为Dockerfile的文件。 简单示例一个依赖node的应用在docker中运行。其中的很多运行命令需要根据项目调整。 12345678910111213141516# 拉取最新的node版本，可以指定版本FROM node:alpine# 创建一个app文件夹RUN mkdir -p /app# 设置工作目录为appWORKDIR /app# 拷贝当前项目到该文件夹下COPY . /app# 可以设置淘宝镜像RUN npm i --registry=https://registry.npm.taobao.org# 安装依赖RUN npm install # 运行前端打包指令RUN npm run build# 运行项目CMD ["npm","start"] 指令12345678FROM：定制的镜像都是基于 FROM 的镜像，等同于 docker pull RUN：用于执行后面跟着的命令行命令。eg：RUN yarn（执行yarn依赖下载） 换行链接符 \COPY：将文件或目录复制到镜像中CMD：指定容器创建时的默认命令ENV：在容器内部设置环境变量WORKDIR：设置后续指令的工作目录VOLUME：为容器创建挂载点或声明卷ARG：定义在构建过程中传递给构建器的变量，可使用 "docker build" 命令设置 docker composedocker-compose.yml文件类似与Dockerfile文件，是另一种更快捷的配置文件。可以参考官网详情。 举例下面举例一种vue项目在docker环境中进行开发，本地文件改变时项目会热更新。 配置docker-compose项目根目录放置docker-compose.yaml文件。 123456789101112131415161718version: '3'services: vueapp: restart: always image: vueapp:0.0.1 container_name: vueapp environment: # - NODE_ENV=production - NODE_ENV=development build: context: ./ ports: # 映射容器的8080端口到本地的8080端口 - 8080:8080 volumes: - ./src:/app/src #- ./node_modules:/app/node_modules command: "npm run serve" 配置Dockerfile123456789101112# 使用官方的Node.js镜像作为基础镜像FROM node:latest# 创建app文件夹RUN mkdir -p /app# 设置工作目录为/appWORKDIR /app # 拷贝文件到该目录COPY . /app# 安装项目依赖RUN npm install# 启动开发服务器CMD ["npm", "run", "serve"] 启动命令123456789# 根据当前根目录项目构建项目，加-d可后台运行，如果没有镜像会构建镜像同时启动容器docker-compose up -ddocker-compose up --force-recreate # 强制清空启动# 关闭正在运行的容器docker-compose down# 重启容器docker-compose restart]]></content>
+    <content type="text"><![CDATA[介绍Docker基本使用方法，附带实现在Docker中运行前端项目开发环境的方法。 下载新手推荐下载桌面版，可视化操作更简单，很多指令可以通过可视化进行。下载地址。 Docker命令建议通过docker 指令名称 --help查看详细的指令信息。这里简单列举大概有哪些。 简单示例1234567891011121314# 下载 redis 镜像docker pull redis # 根据 reids 镜像生成端口从内部6378映射到外部6379的容器，其名为 myredisdocker run -itd --name myredis -p 6378:6379 redis# 查看当前的容器，获取CONTAINER IDdocker ps # 根据容器id，进入容器内部docker exec -it CONTAINERID bash/sh# 重启/停止容器docker restart/stop CONTAINERID# 根据容器id，删除容器docker rm -f CONTAINERID# 删除本地redis镜像docker rmi redis 容器生命周期1234567891011121314151617181920212223242526272829303132333435# 创建一个新的容器并运行一个命令 # -t: 在新容器内指定一个伪终端或终端。# -i: 允许你对容器内的标准输入 (STDIN) 进行交互# -d: 后台运行docker run [OPTIONS] IMAGE [COMMAND] [ARG...]docker run -itd --name customName -p 3000:3000 nginx:latest# 启动一个或多个已经被停止的容器docker start [OPTIONS] CONTAINER [CONTAINER...]# 停止一个运行中的容器docker stop [OPTIONS] CONTAINER [CONTAINER...]# 重启容器docker restart [OPTIONS] CONTAINER [CONTAINER...]# 杀掉一个运行中的容器docker kill [OPTIONS] CONTAINER [CONTAINER...]docker kill mynginx# 删除一个或多个容器docker rm [OPTIONS] CONTAINER [CONTAINER...]# 暂停容器中所有的进程docker pause CONTAINER [CONTAINER...]# 恢复容器中所有的进程docker unpause CONTAINER [CONTAINER...]# 创建一个新的容器但不启动它，语法同rundocker create [OPTIONS] IMAGE [COMMAND] [ARG...]# 在运行的容器中执行命令docker exec [OPTIONS] CONTAINER COMMAND [ARG...]docker exec -it xxxid bash/sh 容器操作12345678910111213141516171819202122232425262728293031# 列出容器 docker ps [OPTIONS]docker ps -a# 获取容器/镜像的元数据docker inspect [OPTIONS] NAME|ID [NAME|ID...]docker inspect mysql:5.6# 查看容器中运行的进程信息，支持 ps 命令参数docker top [OPTIONS] CONTAINER [ps OPTIONS]# 连接到正在运行中的容器docker attach [OPTIONS] CONTAINER # 从服务器获取实时事件docker events [OPTIONS]# 获取容器的日志docker logs [OPTIONS] CONTAINER# 阻塞运行直到容器停止，然后打印出它的退出代码docker wait [OPTIONS] CONTAINER [CONTAINER...]# 将文件系统作为一个tar归档文件导出到STDOUTdocker export [OPTIONS] CONTAINER# 用于列出指定的容器的端口映射，或者查找将 PRIVATE_PORT NAT 到面向公众的端口docker port [OPTIONS] CONTAINER [PRIVATE_PORT/PROTO]# 显示容器资源的使用情况，包括：CPU、内存、网络 I/O等docker stats [OPTIONS] [CONTAINER...] 容器rootfs命令12345678# 从容器创建一个新的镜像docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]# 用于容器与主机之间的数据拷贝docker cp # 检查容器里文件结构的更改docker diff [OPTIONS] CONTAINER 镜像仓库12345678910111213# 登陆/登出到一个Docker镜像仓库docker login/logout [OPTIONS] [SERVER]# 从镜像仓库中拉取或者更新指定镜像docker pull [OPTIONS] NAME[:TAG|@DIGEST]docker pull ngnix# 将本地的镜像上传到镜像仓库,要先登陆到镜像仓库docker push [OPTIONS] NAME[:TAG]docker push myimage:v1# 从Docker Hub查找镜像docker search [OPTIONS] TERM 镜像指令123456789101112131415161718192021222324252627282930# 列出本地镜像docker images [OPTIONS] [REPOSITORY[:TAG]]# 删除本地一个或多个镜像docker rmi [OPTIONS] IMAGE [IMAGE...]# 标记本地镜像，将其归入某一仓库docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]# 命令用于使用 Dockerfile 创建镜像docker build [OPTIONS] PATH | URL | -docker build -t imgageName .# 查看指定镜像的创建历史docker history [OPTIONS] IMAGE# 将指定镜像保存成 tar 归档文件docker save [OPTIONS] IMAGE [IMAGE...]# 导入使用 docker save 命令导出的镜像docker load [OPTIONS]# 从归档文件中创建镜像docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]# 显示 Docker 系统信息，包括镜像和容器数docker info [OPTIONS]# 显示 Docker 版本信息docker version [OPTIONS] Dockerfile创建一个名字为Dockerfile的文件。 简单示例一个依赖node的应用在docker中运行。其中的很多运行命令需要根据项目调整。 12345678910111213141516# 拉取最新的node版本，可以指定版本FROM node:alpine# 创建一个app文件夹RUN mkdir -p /app# 设置工作目录为appWORKDIR /app# 拷贝当前项目到该文件夹下COPY . /app# 可以设置淘宝镜像RUN npm i --registry=https://registry.npm.taobao.org# 安装依赖RUN npm install # 运行前端打包指令RUN npm run build# 运行项目CMD ["npm","start"] 指令12345678FROM：定制的镜像都是基于 FROM 的镜像，等同于 docker pull RUN：用于执行后面跟着的命令行命令。eg：RUN yarn（执行yarn依赖下载） 换行链接符 \COPY：将文件或目录复制到镜像中CMD：指定容器创建时的默认命令ENV：在容器内部设置环境变量WORKDIR：设置后续指令的工作目录VOLUME：为容器创建挂载点或声明卷ARG：定义在构建过程中传递给构建器的变量，可使用 "docker build" 命令设置 docker composedocker-compose.yml文件类似与Dockerfile文件，是另一种更快捷的配置文件。可以参考官网详情。 举例下面举例一种vue项目在docker环境中进行开发，本地文件改变时项目会热更新。 配置docker-compose项目根目录放置docker-compose.yaml文件。 123456789101112131415161718version: '3'services: vueapp: restart: always image: vueapp:0.0.1 container_name: vueapp environment: # - NODE_ENV=production - NODE_ENV=development build: context: ./ ports: # 映射容器的8080端口到本地的8080端口 - 8080:8080 volumes: - ./src:/app/src #- ./node_modules:/app/node_modules command: "npm run serve" 配置Dockerfile123456789101112# 使用官方的Node.js镜像作为基础镜像FROM node:latest# 创建app文件夹RUN mkdir -p /app# 设置工作目录为/appWORKDIR /app # 拷贝文件到该目录COPY . /app# 安装项目依赖RUN npm install# 启动开发服务器CMD ["npm", "run", "serve"] 启动命令123456789# 根据当前根目录项目构建项目，加-d可后台运行，如果没有镜像会构建镜像同时启动容器docker-compose up -ddocker-compose up --force-recreate # 强制清空启动# 关闭正在运行的容器docker-compose down# 重启容器docker-compose restart 补充.dockerignore文件和.gitignore类似，用来处理docker要忽略的文件。]]></content>
       <tags>
         <tag>Docker</tag>
       </tags>
@@ -151,9 +151,9 @@
         <category>vue</category>
       </categories>
       <tags>
+        <tag>webpack</tag>
         <tag>源码</tag>
         <tag>类型检测</tag>
-        <tag>webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -188,8 +188,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -221,8 +221,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>promise</tag>
         <tag>es6</tag>
+        <tag>promise</tag>
         <tag>事件循环</tag>
       </tags>
   </entry>
@@ -260,8 +260,8 @@
       </categories>
       <tags>
         <tag>脚手架</tag>
-        <tag>vue</tag>
         <tag>webpack</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -322,8 +322,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -377,8 +377,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>node</tag>
+        <tag>es6</tag>
         <tag>module</tag>
       </tags>
   </entry>
