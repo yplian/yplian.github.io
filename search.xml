@@ -17,6 +17,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Cookie相关]]></title>
+    <url>%2FCookie%E7%9B%B8%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[操作Cookie相关内容。 获取Cookie1234567891011121314151617181920/** * 获取cookie * * @export * @param &#123;string&#125; coockiename * @return &#123;*&#125; &#123;(string | undefined)&#125; */export function getCookieValue(coockiename: string): string | undefined &#123; try &#123; const name = coockiename + '='; const ca = document.cookie.split(';'); for (let i = 0; i &lt; ca.length; i++) &#123; const c = ca[i].trim(); if (c.indexOf(name) == 0) &#123; return c.substring(name.length, c.length); &#125; &#125; &#125; catch (e) &#123;&#125; return undefined;&#125; 设置Cookie123456789101112131415/** * 设置cookie * * @export * @param &#123;string&#125; name * @param &#123;string&#125; val * @param &#123;number&#125; [expTime=365] */export function setCookieValue(name: string, val: string, expTime = 365) &#123; // 默认cookie有效期365天, 严格设置GTM格式 const exp = new Date(Date.now() + expTime * 864e5); document.cookie = `$&#123;name&#125;=$&#123;encodeURIComponent( val )&#125;;expires=$&#123;exp.toUTCString()&#125;; path=/; domain=$&#123;getCookieDomain()&#125;;`;&#125; 获取主域名12345678910111213141516171819202122232425262728/** * 获取主域名，如果域名是ip，直接返回 eg:www.baidu.com =&gt; .baidu.com * @export * @param &#123;string&#125; [hostName] * @return &#123;*&#125; &#123;string&#125; */export function getCookieDomain(hostName?: string): string &#123; const initialHost: string = hostName || location.hostname; let host: string = initialHost; const ip = /^(\\d&#123;1,2&#125;|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d&#123;1,2&#125;|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d&#123;1,2&#125;|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d&#123;1,2&#125;|1\\d\\d|2[0-4]\\d|25[0-5])$/; if (ip.test(initialHost) === true || initialHost === 'localhost') return initialHost; const regex = /([^]*).*/; const match: RegExpMatchArray | null = initialHost.match(regex); if (match !== undefined &amp;&amp; match !== null) host = match[1]; if (host !== undefined &amp;&amp; host !== null) &#123; const strAry: string[] = host.split('.'); if (strAry.length &gt; 2) &#123; host = strAry.slice(1).join('.'); &#125; &#125; return `.$&#123;host&#125;`;&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[CSV转JSON]]></title>
     <url>%2FCSV%E8%BD%ACJSON%2F</url>
     <content type="text"><![CDATA[市面上有很多现在的网站，可以实现csv转为需要的格式，但因为项目的csv格式比较特殊，需要手动实现自定义。 主要通过三方的 csvtojson npm 包实现。记录过程，方便自定义更多格式。 话不多说，简单说下流程。 需求多语言包为csv格式，需要将该格式转为json，便于i18n进行懒加载。 i18文件夹结构 12345--i18n |--en_us |--en_US.csv |--de_de |--de_DE.csv csv的格式大致如下 1234567// i18n/en_us/en_US.csvhello,hellowelcome,welcome// i18n/de_de/de_DE.csvhello,Hallowelcome,Willkommen 转化后的结构 12345// output/en_US.json&#123; hello: hello, welcome: welcome&#125; 实现打开命令行，执行 mkdir demo cd ./demo npm init npm install csvtojson cd &gt;index.js mkdir output 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263// index.jsconst csv = require("csvtojson");var fs = require("fs");function walkSync(currentDirPath, callback) &#123; var fs = require("fs"), path = require("path"); fs.readdirSync(currentDirPath, &#123; withFileTypes: true &#125;).forEach(function ( dirent ) &#123; var filePath = path.join(currentDirPath, dirent.name); if (dirent.isFile()) &#123; callback(filePath, dirent); &#125; else if (dirent.isDirectory()) &#123; walkSync(filePath, callback); &#125; &#125;);&#125;function getFileArr() &#123; const csvFileArr = []; walkSync("./i18n", function (filePath) &#123; // if(filePath.test(/+\.csv$/))&#123; if (filePath.includes(".csv")) &#123; const file = `./$&#123;filePath&#125;`.replace(/\\/g, "/"); csvFileArr.push(file); &#125; &#125;); return csvFileArr&#125;function csvTojson(fileName) &#123; csv(&#123; noheader: true, output: "csv", &#125;) .fromFile(`$&#123;fileName&#125;`) .then((jsonArr) =&gt; &#123; let jsonObj = &#123;&#125;; for (let index = 0; index &lt; jsonArr.length; index++) &#123; const item = jsonArr[index]; jsonObj[item[0]] = item[1]; &#125; jsonObj = JSON.stringify(jsonObj); let outFile = fileName.match(/(\w+)\.csv$/)[1]; fs.writeFile( `./output/$&#123;outFile&#125;.json`, jsonObj, "utf-8", function (err) &#123; if (err) &#123; return console.log(err); &#125; console.log("The file was saved!"); &#125; ); &#125;);&#125;const fileArr = getFileArr();fileArr.forEach((item) =&gt; &#123; csvTojson(item);&#125;);]]></content>
@@ -188,8 +193,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -221,8 +226,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>promise</tag>
+        <tag>es6</tag>
         <tag>事件循环</tag>
       </tags>
   </entry>
@@ -260,8 +265,8 @@
       </categories>
       <tags>
         <tag>脚手架</tag>
-        <tag>webpack</tag>
         <tag>vue</tag>
+        <tag>webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -322,8 +327,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>插件</tag>
         <tag>eslint</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
