@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[npx serve]]></title>
+    <url>%2Fnpx-serve%2F</url>
+    <content type="text"><![CDATA[用于快速启动静态文件服务器的命令行工具。这个工具可以帮助开发者在本地快速查看 HTML、CSS 和 JavaScript 文件的效果，而无需设置复杂的服务器环境。 前序对于本地的静态资源预览，有些可能需要启动http服务，才能实现更好的预览效果。之前用的主要是VsCode的插件LiveServer来快速开启。查阅vue官方时，发现了这个指令。简单了解一下大概。 使用对于一个如下的目录结构 1234/project ├── index.html ├── styles.css └── script.js 打开控制台输入npx serve，如果是第一次会需要输入y，执行下载依赖包，之后会自动开启本地服务。 123456789101112131415PS D:\project&gt;npx serveNeed to install the following packages: serve@14.2.4Ok to proceed? (y) y ┌─────────────────────────────────────────┐ │ │ │ Serving! │ │ │ │ - Local: http://localhost:3000 │ │ - Network: http://172.29.16.1:3000 │ │ │ │ Copied local address to clipboard! │ │ │ └─────────────────────────────────────────┘ 指定端口号通过使用 -l 参数指定其他端口 1npx serve -l 3000 设置缓存时间通过 -t 参数设置缓存时间，以秒为单位。例如，设置缓存时间为 10 秒 1npx serve -t 10 启用压缩通过 -c 参数可以启用 gzip 压缩，提高传输效率 1npx serve -c 简易结合webpack初始化package添加script1234&quot;scripts&quot;: &#123; &quot;build&quot;: &quot;webpack&quot;, &quot;serve&quot;: &quot;npx serve dist&quot;&#125; 安装依赖1npm install webpack webpack-cli serve --save-dev 配置 Webpack12345678910const path = require(&apos;path&apos;);module.exports = &#123; entry: &apos;./src/index.js&apos;, output: &#123; filename: &apos;bundle.js&apos;, path: path.resolve(__dirname, &apos;dist&apos;) &#125;, mode: &apos;development&apos;&#125;; 运行12npm run buildnpm run serve]]></content>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sticky定位示例]]></title>
     <url>%2Fsticky%E5%AE%9A%E4%BD%8D%E7%A4%BA%E4%BE%8B%2F</url>
     <content type="text"><![CDATA[粘性定位区别于其他的定位方式，目前浏览器兼容性良好，使用起来很方便，但是不是很好理解使用，列举几个实现效果。 基础概念使用MDN中简单的介绍了它的概念。 元素根据正常文档流进行定位，然后相对它的最近滚动祖先（nearest scrolling ancestor）和 containing block（最近块级祖先 nearest block-level ancestor），包括 table-related 元素，基于 top、right、bottom 和 left 的值进行偏移。偏移值不会影响任何其他元素的位置。 该值总是创建一个新的层叠上下文（stacking context）。注意，一个 sticky 元素会“固定”在离它最近的一个拥有“滚动机制”的祖先上（当该祖先的 overflow 是 hidden、scroll、auto 或 overlay 时），即便这个祖先不是最近的真实可滚动祖先。这有效地抑制了任何“sticky”行为 简单来说，就是以下几点： 如果父元素position不是static，就会根据父元素定位，如果不是，往上查找滚动的非标准元素（position不是static） 这个元素本身是标准流的元素，类似static 当设置了top/bottom/left/right，会在到达指定偏移量后浮动，类似fixed 相对于底部浮动设置相对于顶部只需要设置top，在可视区域内，向下滚动，父元素相对可视区域顶部消失时，粘性定位元素就会生效。 如果想要针对实现，父元素相对可视区域底部出现，固定显示需要一点技巧。 演示 代码123456789101112131415161718192021222324252627282930313233&lt;style&gt; .box &#123; width: 100%; height: 2000px; background: skyblue; border: 1px solid red; position: relative; &#125; .sticky &#123; position: sticky; bottom: 0px; &#125; .content &#123; width: 100%; background: yellowgreen; border: 1px solid saddlebrown; position: absolute; bottom: 20px; box-sizing: border-box; &#125;&lt;/style&gt;&lt;div style="height: 200px;"&gt;&lt;/div&gt;&lt;div class="box"&gt; &lt;div style="height: 100%;"&gt;&lt;/div&gt; &lt;div class="sticky"&gt; &lt;div class="content"&gt; 这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字，这是一段文字 &lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;div style="height: 800px;"&gt;&lt;/div&gt; 固定底图文字从底部向上滑动全屏背景图，向上滑动时，文字从底部移动至中间。 演示 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586&lt;style&gt; /* 加上 -webkit- 注意兼容 */ h1 &#123; background: -webkit-linear-gradient(135deg, #0eaf6d, #ff6ac6 25%, #147b96 50%, #e6d205 55%, #2cc4e0 60%, #8b2ce0 80%, #ff6384 95%, #08dfb4); /* 文字颜色填充设置为透明 */ -webkit-text-fill-color: transparent; /* 背景裁剪，即让文字使用背景色 */ -webkit-background-clip: text; /* 背景图放大一下，看着柔和一些 */ -webkit-background-size: 200% 100%; /* 应用动画flowCss 12秒速度 无限循环 线性匀速动画*/ -webkit-animation: flowCss 12s infinite linear; &#125; @-webkit-keyframes flowCss &#123; 0% &#123; /* 移动背景位置 */ background-position: 0 0; &#125; 100% &#123; background-position: -400% 0; &#125; &#125; h1:hover &#123; animation: flowCss 4s infinite linear; &#125; .banner-wrap &#123; width: 100%; /* 需要设置大于一屏的高度，多余的高度用来承载滚动的文字 */ height: 180vh; position: relative; &#125; .banner-sticky-box &#123; width: 100%; /* 一定要设置为一屏的高度 */ height: 100vh; position: sticky; top: 0; transition: 0.1s; /* background: skyblue; */ background: url('https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png'); text-align: center; &#125; .banner-scrollytxt &#123; width: 60%; max-width: 640px; position: absolute; bottom: 50vh; left: 50%; transform: translate(-50%, 50%); text-align: center; z-index: 12; &#125; .other&#123; height:200px; background: #f2f2f2; &#125;&lt;/style&gt;&lt;div class="banner-wrap"&gt; &lt;div class="banner-sticky-box"&gt; &lt;!-- 可以放置图片之类背景图 --&gt; &lt;h1&gt;Title&lt;/h1&gt; &lt;/div&gt; &lt;div class="banner-scrollytxt"&gt; &lt;!-- 放置滚动显示的文字，任意内容均可，标准流为父盒子减去100vh的高度，这里是180-100=80vh --&gt; &lt;h1&gt;文字颜色渐变流光效果&lt;/h1&gt; &lt;!-- 思路就是 文字颜色填充为透明、背景裁剪让文字使用背景色、然后设置一个渐变背景色 再放大一下背景，最后通过动画移动背景位置，于是效果就出来了 --&gt; &lt;/div&gt;&lt;/div&gt;&lt;div class="other"&gt;&lt;/div&gt;]]></content>
@@ -193,8 +201,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -327,8 +335,8 @@
       <tags>
         <tag>编辑器</tag>
         <tag>vscode</tag>
-        <tag>eslint</tag>
         <tag>插件</tag>
+        <tag>eslint</tag>
       </tags>
   </entry>
   <entry>
@@ -382,8 +390,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>node</tag>
         <tag>es6</tag>
+        <tag>node</tag>
         <tag>module</tag>
       </tags>
   </entry>
