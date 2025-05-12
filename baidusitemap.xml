@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>https://luckyp.top/Cursor%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2025-04-19T03:54:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>Cursor使用</title>
+        <pubTime>2025-04-19T03:54:32.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://luckyp.top/npx-serve/</loc>
     <lastmod>2024-10-01T03:38:54.000Z</lastmod>
     <data>
@@ -604,9 +619,9 @@
         
         <tag>脚手架</tag>
          
-        <tag>vue</tag>
-         
         <tag>webpack</tag>
+         
+        <tag>vue</tag>
          
          
            
@@ -823,9 +838,9 @@
         <title>node笔记</title>
         <pubTime>2017-11-12T16:00:00.000Z</pubTime>
         
-        <tag>node</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>node</tag>
          
          
            
@@ -1118,28 +1133,6 @@
 
     
   <url>
-    <loc>https://luckyp.top/%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%AF%B9%E8%B1%A11/</loc>
-    <lastmod>2017-02-08T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>高程笔记-对象1</title>
-        <pubTime>2017-02-08T16:00:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>Object</tag>
-         
-         
-           
-             
-              <breadCrumb title="js" url="https://luckyp.top/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://luckyp.top/babel/</loc>
     <lastmod>2017-02-08T16:00:00.000Z</lastmod>
     <data>
@@ -1155,6 +1148,28 @@
            
              
               <breadCrumb title="工具" url="https://luckyp.top/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://luckyp.top/%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%AF%B9%E8%B1%A11/</loc>
+    <lastmod>2017-02-08T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>高程笔记-对象1</title>
+        <pubTime>2017-02-08T16:00:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>Object</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="https://luckyp.top/categories/js/"/>
           
         </display>
     </data>
