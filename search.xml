@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[注意力机制相关]]></title>
+    <url>%2F%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[注意力机制简介 注意力机制的通俗理解 让我们通过几个生活中的例子来理解: 例子1: 阅读理解假设有这样一段话:“小明很喜欢打篮球。他每天都会去操场练习。” 当我们读到”他”这个字的时候,大脑会自动去寻找这个”他”指的是谁。通过上下文,我们知道”他”指的是”小明”。这就是一个最基本的注意力机制 - 我们的大脑会自动关注到相关的重要信息。 例子2: 歧义词理解“我在得物上买了最新款的苹果,体验非常好”“我在得物上买了阿克苏的苹果,口感非常好” 在这两句话中,”苹果”是一个歧义词: 第一句中的”苹果”指的是iPhone手机,因为搭配了”最新款”和”体验” 第二句中的”苹果”指的是水果,因为搭配了”阿克苏”和”口感” 注意力机制就是帮助模型像人类大脑一样,通过上下文来理解每个词的真实含义。 注意力机制是如何工作的 让我用一个形象的例子来解释: 想象你在看一个很长的句子:”昨天下午,小明在公园里遇到了小红,她穿着一条蓝色的裙子。” 当模型在处理”她”这个词时,会: 1) 计算相关度分数: “她” 和 “小明” 的相关度: 较低(因为性别不匹配) “她” 和 “小红” 的相关度: 很高(因为性别匹配) “她” 和其他词的相关度: 较低 2) 分配注意力权重: “小红” 获得最高的注意力权重 其他词获得较低的注意力权重 3) 整合信息:模型会重点关注高权重的信息,从而理解”她”指代的是”小红”。 多头注意力机制 继续用刚才的例子:“昨天下午,小明在公园里遇到了小红,她穿着一条蓝色的裙子。” 多头注意力就像是从多个角度来理解这句话: 第1个注意力头可能关注人物关系:发现”她”和”小红”的关联 第2个注意力头可能关注时间信息:关注”昨天下午”这个时间点 第3个注意力头可能关注地点信息:关注”公园”这个场所 第4个注意力头可能关注动作信息:关注”遇到”这个动作 这就像多个人从不同角度来理解同一句话,最后把这些理解综合起来,得到更全面的理解。 为什么需要注意力机制 在注意力机制出现之前,模型处理长文本有这些问题: 无法很好地处理长距离依赖比如在很长的文章中,可能会”忘记”前面提到的重要信息 不能并行处理必须一个词一个词按顺序处理,效率较低 注意力机制解决了这些问题: 可以直接建立任意两个词之间的联系 支持并行计算,大大提高了处理效率 为什么可以并行对比传统模型(RNN)和Transformer来解释为什么Transformer支持并行计算。 传统RNN模型的处理方式：假设我们有一句话：”我喜欢吃苹果” RNN必须按顺序一个词一个词处理：1234第1步：处理&quot;我&quot;第2步：处理&quot;喜欢&quot; (必须等第1步完成)第3步：处理&quot;吃&quot; (必须等第2步完成)第4步：处理&quot;苹果&quot; (必须等第3步完成) 就像是在读一本书，你必须从第一页开始，按顺序一页一页读下去，不能跳着读。这就是”顺序处理”。 Transformer的并行处理方式： Transformer可以同时处理所有的词：12345同时处理：- &quot;我&quot; - &quot;喜欢&quot;- &quot;吃&quot;- &quot;苹果&quot; 这就像是有4个人，每个人负责读一个词，他们可以同时开始读。这就是”并行处理”。 为什么Transformer能做到并行？ 关键在于位置编码(Positional Encoding)和自注意力机制： a) 位置编码： 每个词都会被赋予一个位置信息 比如：”我”(位置1)、”喜欢”(位置2)、”吃”(位置3)、”苹果”(位置4) 这样即使同时处理所有词，模型也知道每个词在句子中的位置 举个例子：就像给每个人发一张带编号的扑克牌： “我” → 1号牌 “喜欢” → 2号牌 “吃” → 3号牌 “苹果” → 4号牌 这样即使大家同时看自己的牌，也知道这些词的正确顺序。 b) 自注意力机制： 每个词可以同时和句子中的所有其他词计算注意力分数 不需要等待前面的词处理完成 举个例子：想象一个会议室里有4个人，每个人负责一个词： A负责”我” B负责”喜欢” C负责”吃” D负责”苹果” 他们可以同时开始工作： 每个人都有一份完整的句子副本 他们可以同时查看整个句子 各自计算自己负责的词与其他词的关联度 实际的计算优势： 假设处理一个有100个词的句子： RNN需要100个时间步骤，因为必须一个词一个词处理 Transformer只需要1个时间步骤，因为可以同时处理100个词 这就像是： RNN：一个人要读100页书，需要花100分钟 Transformer：100个人同时读，每人读1页，只需要1分钟 在GPU上的优势： 现代GPU擅长并行计算，就像有很多个小工人可以同时工作。 Transformer充分利用了这一优势，可以让GPU同时处理多个词 而RNN因为必须按顺序处理，无法充分利用GPU的并行能力 这就是为什么说Transformer支持并行计算，它通过巧妙的设计（位置编码+自注意力机制），让所有词可以同时被处理，大大提高了计算效率。这也是Transformer相比RNN的一个重要优势。 注意力机制计算过程 基本概念：Query(查询)、Key(键)、Value(值) 先用一个生活中的例子来理解这三个概念：想象你去图书馆找书： Query(查询)：你想找的书的关键词，比如”人工智能入门” Key(键)：图书馆里每本书的标题 Value(值)：书的具体内容 在Transformer中的对应关系： 还是用前面的例子：“昨天下午,小明在公园里遇到了小红,她穿着一条蓝色的裙子。” 当我们要理解”她”这个词时： Query(查询)：是”她”这个词的表示向量 Key(键)：句子中所有词的表示向量 Value(值)：句子中所有词携带的信息 具体计算步骤： 让我们用一个简化的例子来说明：“小红很喜欢吃苹果” 第一步：转换为向量假设我们用2维向量来表示每个词（实际中通常是512维或更高）：12345&quot;小红&quot; → [2, 3]&quot;很&quot; → [1, 1]&quot;喜欢&quot; → [2, 2]&quot;吃&quot; → [1, 2]&quot;苹果&quot; → [3, 1] 第二步：计算Query、Key、Value每个词都会被转换为三种向量：1234例如&quot;小红&quot;：Q向量(查询)：[2, 3] × WQ = [4, 6]K向量(键)：[2, 3] × WK = [5, 7]V向量(值)：[2, 3] × WV = [3, 4] (其中WQ、WK、WV是可学习的权重矩阵) 第三步：计算注意力分数以”小红”为例，计算它与所有词的相关度：1234567相关度 = Q向量 · K向量 / √维度比如&quot;小红&quot;和&quot;苹果&quot;的相关度：= [4, 6] · [5, 7] / √2= (4×5 + 6×7) / 1.414= (20 + 42) / 1.414= 43.7 第四步：归一化分数使用softmax函数将所有分数转换为0-1之间的概率值：12原始分数：[43.7, 35.2, 28.9, 31.5, 39.6]归一化后：[0.3, 0.2, 0.1, 0.15, 0.25] 第五步：加权求和用这些概率值去加权每个词的Value向量：1最终表示 = 0.3×V1 + 0.2×V2 + 0.1×V3 + 0.15×V4 + 0.25×V5 多头注意力机制 实际上，Transformer使用了多头注意力机制，相当于：1234- 注意力头1：可能关注语法关系- 注意力头2：可能关注语义关系- 注意力头3：可能关注位置关系...（通常有8个头） 每个头都独立计算注意力分数，最后将所有结果合并。 形象的比喻 这个过程就像： 一个人(Query)在派对上(句子)寻找聊天对象 他会看看每个人(Key)是否适合聊天 计算相关度就像评估与每个人的共同话题多少 最后主要和相关度高的人(Value)交流 或者像： 一个学生(Query)在解答问题 他会查看所有笔记(Key) 计算每页笔记与问题的相关度 最后主要参考相关度高的笔记内容(Value) 这就是注意力分数的计算过程。虽然数学计算看起来复杂，但基本思想是让模型能够像人类一样，通过计算相关度来决定应该重点关注哪些信息。 向量 词向量的基本概念 词向量(Word Embedding)是将单词转换为计算机可以理解的数值向量的方法。主要有以下特点： 每个单词被映射到一个固定维度(比如300维)的向量空间中 语义相近的词在向量空间中的距离也相近 向量之间可以进行数学运算,比如:vector(‘国王’) - vector(‘男人’) + vector(‘女人’) ≈ vector(‘女王’) 获取词向量的主要方法 (1) Word2Vec模型: CBOW(Continuous Bag of Words):使用上下文预测目标词 Skip-gram:使用目标词预测上下文词 通过神经网络训练,学习词与词之间的语义关系 (2) GloVe模型: 基于全局矩阵分解 统计词与词的共现频率 结合局部上下文窗口方法 (3) FastText模型: 将单词分解为子词单元(n-gram) 能处理词表外的词 对拼写错误有一定容忍度 Transformer中的向量表示 Transformer中的输入向量由三部分组成: (1) 词嵌入(Token Embeddings): 表示单词本身的语义 通过可训练的嵌入矩阵获得 维度通常是512维 (2) 位置嵌入(Positional Embeddings): 表示单词在序列中的位置信息 使用正弦和余弦函数计算 与词嵌入维度相同 (3) 段嵌入(Segment Embeddings): 用于区分不同的句子或段落 主要用于BERT等模型 向量的计算过程 (1) 首先进行分词(Tokenization): 将输入文本分解为token 每个token映射到一个唯一的ID 构建词表(Vocabulary) (2) 通过嵌入层获取词向量:12embedding = nn.Embedding(vocab_size, embedding_dim)token_embedding = embedding(token_ids) (3) 计算位置编码:12PE(pos,2i) = sin(pos/10000^(2i/d))PE(pos,2i+1) = cos(pos/10000^(2i/d)) (4) 将词向量和位置编码相加:1final_embedding = token_embedding + positional_embedding 向量的特点 维度固定:通常是512维或768维 稠密表示:每个维度都有值,不是one-hot编码 可训练:通过反向传播不断优化 可解释:向量间的距离和运算有语义含义 这样,每个输入token最终都被转换为一个包含语义信息和位置信息的高维向量,作为Transformer的输入。这种向量表示使得模型能够: 理解词与词之间的语义关系 捕捉序列中的位置信息 并行处理整个序列 处理变长的输入 这就是Transformer中向量表示的基本原理。通过这种方式,模型可以有效地理解和处理自然语言。]]></content>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Cursor使用]]></title>
     <url>%2FCursor%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[Cursor功能基本用法 快捷询问选中字段后 Ctrl+I打开chat（实际使用和Ctrl+L差不多） Ctrl+L创建新的chat（长篇询问） Ctrl+K创建新的短词询问（比如添加注释） 聊天模式推荐默认的代理模式Agent Agent：读写模式，开启所有的工具集 Ask： 只读模式，不支持修改。用于提出问题、探索和了解代码库 Manual： 手动模式。只访问修改提供的上下文 切换模型 快捷键 Ctrl + /，输入模型 图形点击 对比 Claude 3.7 Sonnet / Claude 3.7 Sonnet MAX 开发商：Anthropic 特点：Claude 3.7 Sonnet 是 Claude 3 系列的中高端模型，擅长理解复杂文本、代码、推理和创意写作。MAX 版本通常指的是更高配额或更快响应速度。 适用场景：代码生成、文档总结、复杂对话、推理任务。 Gemini 2.5 Pro / Gemini 2.5 Pro Exp / Gemini 2.5 Pro MAX 开发商：Google（原名 Bard，Gemini 是升级版） 特点：Gemini 2.5 Pro 是 Google 最新的多模态大模型，支持文本、图片等多种输入，理解能力强，推理和代码能力也很优秀。Exp 版本为实验性，MAX 版本为高配额。 适用场景：多模态任务、代码、复杂问答、图片理解。 GPT-4.1 / GPT-4o 开发商：OpenAI GPT-4.1：GPT-4 的升级版，文本理解和生成能力极强，代码能力也很强。 GPT-4o：OpenAI 最新旗舰模型，o 代表“omni”，多模态能力更强，响应速度更快，推理和代码能力进一步提升。 适用场景：高质量文本生成、代码、推理、复杂对话、多模态任务。 o4-mini / o3 开发商：OpenAI o4-mini：GPT-4o 的轻量级版本，速度快，适合对响应速度要求高但对质量要求一般的场景。 o3：GPT-3.5 的升级版，速度快，成本低，适合日常对话和轻量级任务。 总结建议 追求最强代码/推理/多模态能力：优先用 GPT-4o、Gemini 2.5 Pro、Claude 3.7 Sonnet 追求速度和成本：用 o4-mini、o3 需要 Google 生态/图片理解：Gemini 2.5 Pro 需要 Anthropic 风格/安全性：Claude 3.7 Sonnet 注意点带MAX的按条收费 Think模式深入思考推理模式。推理模式尽量直接说明问题，减少提示词（模型在推理过程中会自行加提示词，过多的提示词会干扰推理）。 上下文添加上下文询问，有利于提高精度 @Files。通过输入文件名作为上下文 #Files。特别关注某个文件，配合@Files /command。可以快速添加打开的文件作为上下文 @Folders。通过输入文件夹作为上下文 @Code。选中代码段（Ctrl+L） @Git。查询询问代码情况 @Doc。询问文档相关 @图片。例如实现图片内容 @Web。接入外部实时网络查询 @powershell。询问运行控制台指令 @Link。通过粘贴URL链接作为上下文 @Rules。Rule自定义 其它 智能提示，Tab键入，快速编写/修改 MCP，允许通过标准化接口将代理连接到各种数据源和工具，从而扩展代理的功能 自动生成提交信息]]></content>
+      <tags>
+        <tag>编辑器</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[npx serve]]></title>
@@ -252,8 +263,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>Number</tag>
+        <tag>String</tag>
         <tag>转换</tag>
       </tags>
   </entry>
@@ -408,8 +419,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>node</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -576,18 +587,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[babel]]></title>
-    <url>%2Fbabel%2F</url>
-    <content type="text"><![CDATA[babel简单使用。 官网介绍的很详细，官网地址http://babeljs.io/. .babelrc一般需要配置文件.babelrc配合使用。基本格式: 12345## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;es2015&quot;,&quot;react&quot;,...otherRules], &quot;plugins&quot;: []&#125; babel-cli安装指令如下，可以使用指令编译文件 1npm install --global babel-cli 简单用法 12345678910111213# 编译单个文件$ babel index.js# 转码结果写入一个文件 --out-file/-o$ babel index.js --out-file outfile.js$ babel index.js -o outfile.js# 整个目录转码 --out-dir/-d$ babel src --out-dir lib$ babel src -d lib# 生成source map -s$ babel src -d lib -s babel-preset-envbabel可以安装官方的预编译配置，也可以自定义。具体包含什么功能，详见官方文档。 1234567## 下载安装npm install --save-dev babel-preset-env## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;env&quot;]&#125; babel-polyfill由于Babel只转换语法（如箭头函数），因此可以使用babel-polyfill来支持Promise或新的本地方法（如String.padStart（左键））等新的全局变量。 1npm install --save-dev babel-polyfill 在线编译官网地址http://babeljs.io/repl/]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>Polyfill</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[高程笔记-对象1]]></title>
     <url>%2F%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%AF%B9%E8%B1%A11%2F</url>
     <content type="text"><![CDATA[《JavaScript高级程序》笔记，主要关于对象属性以及对象的创建方式。 最简单的创建方式是通过Object。 12345678var person = new Object();person.name = "xiaoming";person.age = "12";person.job = "student";person.sayName = function()&#123; console.log(this.name);&#125; 属性类型属性分类ECMA-262定义描述内部特性，有两种（只能为其中一种），如下： 数据属性 访问器属性 [[ Configurable ]] [[ Configurable ]] [[ Enumerable ]] [[ Enumerable ]] [[ Writable ]] [[ Value ]] [[ Get ]] [[ Set ]] [[ Configurable ]]：表示能否被delete删除重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。 [[ Enumerable ]]：表示能否被for-in循环返回属性。 [[ Writable ]]：表示能否修改属性的值。 [[ Value ]]：包含这个属性的数据值。读取属性值时，从这个位置读取；写入属性值的时候，把新值保存在这个位置。默认undefined。 [[ Get ]]：在读取属性时掉用的函数。默认值为undefined。 [[ Set ]]：在写入属性时掉用的函数。默认值为undefined。 设置默认属性需要es5的Object.definedProperty()方法。例如： 1234567891011121314151617181920212223var person = &#123;&#125;;Object.definedProperty(person,'name',&#123; writable : false, value: 'xiaoMing'&#125;);console.log(person.name); // 'xiaoMing'person.name = 'xiaoHong';console.log(person.name); // 'xiaoMing'Object.definedProperty(person,'name',&#123; configurable : false, value: 'xiaoMing'&#125;);console.log(person.name); // 'xiaoMing'person.name = 'xiaoHong';console.log(person.name); // 'xiaoMing'// 报错Object.definedProperty(person,'name',&#123; configurable : true, value: 'xiaoMing'&#125;); 单属性定义1234567891011121314151617var book = &#123; _year: 2004, edition: 1&#125;Object.definedProperty(book,'year',&#123; get: function ()&#123; return this._year; &#125;, set: function(newValue)&#123; if( newValue &gt; 2004 )&#123; this._year = newValue; this.edition += newValue - 2004; &#125; &#125;&#125;);book.year = 2005;console.log( book.edition ) //2 多属性定义123456789101112131415161718192021222324var book = &#123; &#125;;Object.definedProperties(book,&#123; _year：&#123; value: 2004 &#125;, edition: &#123; value: 1 &#125;, year: &#123; get: function ()&#123; return this._year; &#125;, set: function(newValue)&#123; if( newValue &gt; 2004 )&#123; this._year = newValue; this.edition += newValue - 2004; &#125; &#125; &#125;&#125;);var descriptor = Object.getOwnPropertyDescriptor(book,"_year");alert(descriptor.value) //2004alert(descriptor.configurable) //false 创建对象工厂模式对象的识别不明确。 123456789101112function createPerson(name,age,job) &#123; var o = new Object(); o.name = name; o.age = age; o.job = job; o.sayName =function()&#123; alert(this.name); &#125; return o;&#125;var person1 = createPerson('Nicholas','29','teacher');var person2 = createPerson('Greg','19','student'); 构造函数模式方法的重复创建，即每个实例上面都会创建一个方法。如下例中，person1和person2都含有sayName()的方法。如果将sayName()单独提取出来，当方法很多的时候，就会出现污染全局变量的问题。 12345678910function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; this.sayName =function()&#123; alert(this.name); &#125;&#125;var person1 = new Person('Nicholas','29','teacher');var person2 = new Person('Greg','19','student'); 原型模式解决了方法会污染环境变量的问题，但是对于数组、对象这种引用类型，可能会出现如下例的问题。虽然friends属性不同，但是指向的同一地址，从而影响其它实例。 123456789101112131415161718192021function Person() &#123;&#125;Person.prototype = &#123; name: 'Nicholas', age:'29', job:'teacher', friends:['lucy','jon','angus'], sayName: function()&#123; alert(this.name); &#125;&#125;var person1 = new Person();person1.sayName() // 'Nicholas'var person2 = new Person();person2.sayName() // 'Nicholas'person1.friends.push('van');alert(person1.friends); //'lucy','jon','angus'alert(person2.friends); //'lucy','jon','angus'alert(person1.friends === person2.friends); //true 组合构造函数和原型模式常用的一种创建方式。 12345678910111213141516171819function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; this.friends = ['lucy','jon','angus'];&#125;Person.prototype = &#123; constructor: Person, sayName: function()&#123; alert(this.name); &#125;&#125;var person1 = new Person('Nicholas','29','teacher');var person2 = new Person('Greg','19','student');person1.friends.push('van');alert(person1.friends); //'lucy','jon','angus'alert(person2.friends); //'lucy','jon'alert(person1.friends === person2.friends); //false 动态原型模式初次执行函数时，会触发判断。原型不能使用字面量的模式创建，相当于重写，会出现丢失构造函数的问题。 12345678910function Person(name,age,job) &#123; this.name = name; this.age = age; this.job = job; if (typeof this.sayName != 'function' )&#123; Person.prototpe.sayName = function()&#123; alert(this.name); &#125;; &#125;&#125; 稳妥构造函数模式name只能由sayName()函数访问属性，通过提供安全性，特殊情况使用。 123456789function Person(name,age,job) &#123; var o = new Object(); o.sayName = function()&#123; alert(name); &#125;; return o;&#125;var person1 = Person('Nicholas','29','teacher');person1.sayName(); // Nicholas]]></content>
@@ -597,6 +596,18 @@
       <tags>
         <tag>笔记</tag>
         <tag>Object</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[babel]]></title>
+    <url>%2Fbabel%2F</url>
+    <content type="text"><![CDATA[babel简单使用。 官网介绍的很详细，官网地址http://babeljs.io/. .babelrc一般需要配置文件.babelrc配合使用。基本格式: 12345## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;es2015&quot;,&quot;react&quot;,...otherRules], &quot;plugins&quot;: []&#125; babel-cli安装指令如下，可以使用指令编译文件 1npm install --global babel-cli 简单用法 12345678910111213# 编译单个文件$ babel index.js# 转码结果写入一个文件 --out-file/-o$ babel index.js --out-file outfile.js$ babel index.js -o outfile.js# 整个目录转码 --out-dir/-d$ babel src --out-dir lib$ babel src -d lib# 生成source map -s$ babel src -d lib -s babel-preset-envbabel可以安装官方的预编译配置，也可以自定义。具体包含什么功能，详见官方文档。 1234567## 下载安装npm install --save-dev babel-preset-env## .babelrc文件配置&#123; &quot;presets&quot;: [&quot;env&quot;]&#125; babel-polyfill由于Babel只转换语法（如箭头函数），因此可以使用babel-polyfill来支持Promise或新的本地方法（如String.padStart（左键））等新的全局变量。 1npm install --save-dev babel-polyfill 在线编译官网地址http://babeljs.io/repl/]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>Polyfill</tag>
       </tags>
   </entry>
   <entry>
@@ -631,8 +642,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>Number</tag>
+        <tag>String</tag>
         <tag>转换</tag>
       </tags>
   </entry>
