@@ -117,13 +117,13 @@
 
 
 
-  <meta name="keywords" content="编辑器,vscode,eslint,插件,">
+  <meta name="keywords" content="编辑器,vscode,插件,eslint,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="远方" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="宁静致远" type="application/atom+xml">
 
 
 
@@ -131,14 +131,14 @@
 
 
 <meta name="description" content="备忘一下Visual Studio Code经常使用的插件，便于日后食用。">
-<meta name="keywords" content="编辑器,vscode,eslint,插件">
+<meta name="keywords" content="编辑器,vscode,插件,eslint">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vscode插件">
 <meta property="og:url" content="https://luckyp.top/vscode插件/index.html">
-<meta property="og:site_name" content="远方">
+<meta property="og:site_name" content="宁静致远">
 <meta property="og:description" content="备忘一下Visual Studio Code经常使用的插件，便于日后食用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-10-06T16:00:00.000Z">
+<meta property="og:updated_time" content="2024-01-06T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode插件">
 <meta name="twitter:description" content="备忘一下Visual Studio Code经常使用的插件，便于日后食用。">
@@ -177,7 +177,7 @@
 
 
 
-  <title>vscode插件 | 远方</title>
+  <title>vscode插件 | 宁静致远</title>
   
 
 
@@ -217,7 +217,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">远方</span>
+        <span class="site-title">宁静致远</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -345,7 +345,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="远方">
+      <meta itemprop="name" content="宁静致远">
     </span>
 
     
@@ -381,8 +381,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-07T00:00:00+08:00">
-                2022-10-07
+              <time title="更新于" itemprop="dateModified" datetime="2024-01-07T00:00:00+08:00">
+                2024-01-07
               </time>
             
           </span>
@@ -480,6 +480,8 @@
 </ul>
 <h2 id="Eslint配置"><a href="#Eslint配置" class="headerlink" title="Eslint配置"></a>Eslint配置</h2><p>VSCode 扩展设置，依次点击 文件 &gt; 首选项 &gt; 设置 打开 VSCode 配置文件,添加如下配置，这样<br>每次保存的时候就可以根据根目录下.eslintrc.js你配置的eslint规则来检查和做一些简单的fix。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"eslint.validate"</span>: [</span><br><span class="line">        <span class="string">"javascript"</span>,</span><br><span class="line">        <span class="string">"javascriptreact"</span>,</span><br><span class="line">        <span class="string">"html"</span>,</span><br><span class="line">        &#123; <span class="string">"language"</span>: <span class="string">"vue"</span>, <span class="string">"autoFix"</span>: <span class="literal">true</span> &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"eslint.options"</span>: &#123;</span><br><span class="line">        <span class="string">"plugins"</span>: [<span class="string">"html"</span>]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="检查插件定位问题-2024-01更新"><a href="#检查插件定位问题-2024-01更新" class="headerlink" title="检查插件定位问题(2024.01更新)"></a>检查插件定位问题(2024.01更新)</h2><p>在安装很多插件的之后，很小几率会出现编辑器报错的情况（例如编辑器更新，导致之前装的某款插件有问题，但是ts初始化一直失败），这时候需要定位到底哪款插件导致。</p>
+<p>理想情况下是，最新安装更新的插件禁用可以复现问题。<br>不确定是什么插件的时候，需要打开控制台，即按<code>F1</code>，输入<code>Help: Start extension bisect</code>，插件会通过二分禁用的方式，重启n次，观察是否复现来确定是那款。</p>
 
       
     </div>
@@ -530,9 +532,9 @@
           
             <a href="/tags/vscode/" <i class="fa fa-tag"> vscode</a>
           
-            <a href="/tags/eslint/" <i class="fa fa-tag"> eslint</a>
-          
             <a href="/tags/插件/" <i class="fa fa-tag"> 插件</a>
+          
+            <a href="/tags/eslint/" <i class="fa fa-tag"> eslint</a>
           
         </div>
       
@@ -642,7 +644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -655,7 +657,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -711,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode安装"><span class="nav-number">1.</span> <span class="nav-text">vscode安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode插件"><span class="nav-number">2.</span> <span class="nav-text">vscode插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eslint配置"><span class="nav-number">3.</span> <span class="nav-text">Eslint配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode安装"><span class="nav-number">1.</span> <span class="nav-text">vscode安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode插件"><span class="nav-number">2.</span> <span class="nav-text">vscode插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eslint配置"><span class="nav-number">3.</span> <span class="nav-text">Eslint配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查插件定位问题-2024-01更新"><span class="nav-number">4.</span> <span class="nav-text">检查插件定位问题(2024.01更新)</span></a></li></ol></div>
             
 
           </div>
@@ -731,7 +733,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -745,7 +747,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">59.0k</span>
+    <span title="博客全站字数">79.4k</span>
   
 </div>
 

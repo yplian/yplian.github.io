@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="C5BffRYdG_mL6vF3PJK_sasZ4cyV1gvUG7Dd1iH6c30">
+
+
+
+  <meta name="msvalidate.01" content="AD398A040B0DAFF8F91C2B1FF099C3C8">
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="TvB8dmCrMA">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/favicon32x32.png?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="宁静致远" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="极简科学上网自建 VPN 方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极简科学上网">
+<meta property="og:url" content="https://luckyp.top/VPN/index.html">
+<meta property="og:site_name" content="宁静致远">
+<meta property="og:description" content="极简科学上网自建 VPN 方案">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2025-05-01T10:59:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="极简科学上网">
+<meta name="twitter:description" content="极简科学上网自建 VPN 方案">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://luckyp.top/VPN/">
+
+
+
+
+
+  <title>极简科学上网 | 宁静致远</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ee8d7296922b66454adbe565dbdb7a8a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">宁静致远</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://luckyp.top/VPN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luckyp">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="宁静致远">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">极简科学上网</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2025-05-01T18:59:50+08:00">
+                2025-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>极简科学上网自建 VPN 方案</p>
+<a id="more"></a>
+<h2 id="🎯-极简科学上网方案"><a href="#🎯-极简科学上网方案" class="headerlink" title="🎯 极简科学上网方案"></a>🎯 <strong>极简科学上网方案</strong></h2><h3 id="💰-最经济配置"><a href="#💰-最经济配置" class="headerlink" title="💰 最经济配置"></a><strong>💰 最经济配置</strong></h3><h4 id="🥇-推荐方案：-2-5-5-月"><a href="#🥇-推荐方案：-2-5-5-月" class="headerlink" title="🥇 推荐方案：$2.5-5/月"></a><strong>🥇 推荐方案：$2.5-5/月</strong></h4><ul>
+<li><strong>服务器</strong>：Vultr/DigitalOcean 最小配置</li>
+<li><strong>配置</strong>：1 核 512MB-1GB 内存，10-25GB 硬盘</li>
+<li><strong>流量</strong>：500GB-1TB/月（够用）</li>
+<li><strong>地区</strong>：日本、新加坡、美国西海岸</li>
+</ul>
+<h4 id="🏆-超值推荐"><a href="#🏆-超值推荐" class="headerlink" title="🏆 超值推荐"></a><strong>🏆 超值推荐</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vultr VPS Regular Performance</span><br><span class="line">• CPU: 1核</span><br><span class="line">• 内存: 512MB</span><br><span class="line">• 存储: 10GB SSD</span><br><span class="line">• 流量: 500GB</span><br><span class="line">• 价格: $2.5/月</span><br></pre></td></tr></table></figure>
+<h3 id="⚡-最简单部署方法"><a href="#⚡-最简单部署方法" class="headerlink" title="⚡ 最简单部署方法"></a><strong>⚡ 最简单部署方法</strong></h3><h4 id="🔥-一键脚本安装（推荐新手）"><a href="#🔥-一键脚本安装（推荐新手）" class="headerlink" title="🔥 一键脚本安装（推荐新手）"></a><strong>🔥 一键脚本安装（推荐新手）</strong></h4><h4 id="方案一：WireGuard-一键脚本"><a href="#方案一：WireGuard-一键脚本" class="headerlink" title="方案一：WireGuard 一键脚本"></a><strong>方案一：WireGuard 一键脚本</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连接到服务器后，直接运行：</span></span><br><span class="line">wget https://git.io/wireguard -O wireguard.sh &amp;&amp; bash wireguard.sh</span><br></pre></td></tr></table></figure>
+<h4 id="方案二：V2Ray-一键脚本"><a href="#方案二：V2Ray-一键脚本" class="headerlink" title="方案二：V2Ray 一键脚本"></a><strong>方案二：V2Ray 一键脚本</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 抗封锁能力更强</span></span><br><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure>
+<h4 id="方案三：Shadowsocks-一键脚本"><a href="#方案三：Shadowsocks-一键脚本" class="headerlink" title="方案三：Shadowsocks 一键脚本"></a><strong>方案三：Shadowsocks 一键脚本</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最轻量级选择</span></span><br><span class="line">wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
+<h3 id="📱-客户端下载"><a href="#📱-客户端下载" class="headerlink" title="📱 客户端下载"></a><strong>📱 客户端下载</strong></h3><h4 id="安卓手机"><a href="#安卓手机" class="headerlink" title="安卓手机"></a><strong>安卓手机</strong></h4><ul>
+<li><strong>V2rayNG</strong>：支持多协议</li>
+<li><strong>WireGuard</strong>：官方客户端</li>
+<li><strong>Shadowsocks</strong>：经典选择</li>
+</ul>
+<h4 id="苹果手机"><a href="#苹果手机" class="headerlink" title="苹果手机"></a><strong>苹果手机</strong></h4><ul>
+<li><strong>Shadowrocket</strong>：$2.99（美区 App Store）</li>
+<li><strong>Quantumult X</strong>：功能强大</li>
+<li><strong>WireGuard</strong>：免费官方版</li>
+</ul>
+<h4 id="Windows-电脑"><a href="#Windows-电脑" class="headerlink" title="Windows 电脑"></a><strong>Windows 电脑</strong></h4><ul>
+<li><strong>V2rayN</strong>：图形界面，简单易用</li>
+<li><strong>WireGuard</strong>：官方客户端</li>
+<li><strong>SSTap</strong>：游戏加速也支持</li>
+</ul>
+<h4 id="Mac-电脑"><a href="#Mac-电脑" class="headerlink" title="Mac 电脑"></a><strong>Mac 电脑</strong></h4><ul>
+<li><strong>ClashX</strong>：功能完整</li>
+<li><strong>WireGuard</strong>：官方版本</li>
+<li><strong>ShadowsocksX-NG</strong>：轻量选择</li>
+</ul>
+<h3 id="🚀-30-秒快速上手"><a href="#🚀-30-秒快速上手" class="headerlink" title="🚀 30 秒快速上手"></a><strong>🚀 30 秒快速上手</strong></h3><h4 id="第-1-步：购买服务器（5-分钟）"><a href="#第-1-步：购买服务器（5-分钟）" class="headerlink" title="第 1 步：购买服务器（5 分钟）"></a><strong>第 1 步：购买服务器（5 分钟）</strong></h4><ol>
+<li>注册 Vultr 账号：<a href="https://vultr.com" target="_blank" rel="noopener">vultr.com</a></li>
+<li>充值$10（支付宝/微信支付）</li>
+<li>选择日本或新加坡节点</li>
+<li>选择 Ubuntu 20.04 系统</li>
+<li>选择$2.5/月套餐</li>
+<li>点击 Deploy 部署</li>
+</ol>
+<h4 id="第-2-步：连接服务器（2-分钟）"><a href="#第-2-步：连接服务器（2-分钟）" class="headerlink" title="第 2 步：连接服务器（2 分钟）"></a><strong>第 2 步：连接服务器（2 分钟）</strong></h4><p><strong>Windows 用户</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载PuTTY，输入服务器IP和端口22</span></span><br><span class="line"><span class="comment"># 用户名：root，密码：在服务器详情查看</span></span><br></pre></td></tr></table></figure>
+<p><strong>Mac/Linux 用户</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh root@你的服务器IP</span><br><span class="line"><span class="comment"># 输入密码登录</span></span><br></pre></td></tr></table></figure>
+<h4 id="第-3-步：一键安装（1-分钟）"><a href="#第-3-步：一键安装（1-分钟）" class="headerlink" title="第 3 步：一键安装（1 分钟）"></a><strong>第 3 步：一键安装（1 分钟）</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制粘贴运行（推荐WireGuard）</span></span><br><span class="line">wget https://git.io/wireguard -O wireguard.sh &amp;&amp; bash wireguard.sh</span><br></pre></td></tr></table></figure>
+<p>按提示设置：</p>
+<ul>
+<li>客户端数量：5-10 个</li>
+<li>其他选项：全部默认回车</li>
+</ul>
+<h4 id="第-4-步：获取配置（30-秒）"><a href="#第-4-步：获取配置（30-秒）" class="headerlink" title="第 4 步：获取配置（30 秒）"></a><strong>第 4 步：获取配置（30 秒）</strong></h4><p>安装完成后会显示：</p>
+<ul>
+<li>二维码（手机扫描）</li>
+<li>配置文件（电脑导入）</li>
+</ul>
+<h3 id="💡-超简单使用方法"><a href="#💡-超简单使用方法" class="headerlink" title="💡 超简单使用方法"></a><strong>💡 超简单使用方法</strong></h3><h4 id="手机使用"><a href="#手机使用" class="headerlink" title="手机使用"></a><strong>手机使用</strong></h4><ol>
+<li>下载 WireGuard APP</li>
+<li>扫描服务器生成的二维码</li>
+<li>点击连接开关</li>
+<li>完成！可以访问 Google 了</li>
+</ol>
+<h4 id="电脑使用"><a href="#电脑使用" class="headerlink" title="电脑使用"></a><strong>电脑使用</strong></h4><ol>
+<li>下载 WireGuard 客户端</li>
+<li>导入配置文件（.conf 文件）</li>
+<li>点击连接</li>
+<li>完成！</li>
+</ol>
+<h3 id="📊-成本对比"><a href="#📊-成本对比" class="headerlink" title="📊 成本对比"></a><strong>📊 成本对比</strong></h3><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>月费用</th>
+<th>年费用</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>自建 VPN</strong></td>
+<td>$2.5-5</td>
+<td>$30-60</td>
+<td>完全私有，无限流量</td>
+</tr>
+<tr>
+<td><strong>商业 VPN</strong></td>
+<td>$3-12</td>
+<td>$36-144</td>
+<td>即用即开，多节点</td>
+</tr>
+<tr>
+<td><strong>机场服务</strong></td>
+<td>$5-20</td>
+<td>$60-240</td>
+<td>高速专线，易被封</td>
+</tr>
+</tbody>
+</table>
+<h3 id="🛡️-安全优化（可选）"><a href="#🛡️-安全优化（可选）" class="headerlink" title="🛡️ 安全优化（可选）"></a><strong>🛡️ 安全优化（可选）</strong></h3><p>如果想要更好的隐蔽性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 修改SSH端口</span></span><br><span class="line">sudo nano /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 将Port 22改为其他端口如2233</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 设置防火墙</span></span><br><span class="line">sudo ufw <span class="built_in">enable</span></span><br><span class="line">sudo ufw allow 2233/tcp  <span class="comment"># 你的SSH端口</span></span><br><span class="line">sudo ufw allow 51820/udp <span class="comment"># WireGuard端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 禁用密码登录（使用密钥）</span></span><br><span class="line">sudo nano /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># PasswordAuthentication no</span></span><br></pre></td></tr></table></figure>
+<h3 id="🔧-常见问题解决"><a href="#🔧-常见问题解决" class="headerlink" title="🔧 常见问题解决"></a><strong>🔧 常见问题解决</strong></h3><h4 id="连不上网络？"><a href="#连不上网络？" class="headerlink" title="连不上网络？"></a><strong>连不上网络？</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查服务状态</span></span><br><span class="line">sudo systemctl status wg-quick@wg0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">sudo systemctl restart wg-quick@wg0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看端口是否开放</span></span><br><span class="line">sudo netstat -ulnp | grep 51820</span><br></pre></td></tr></table></figure>
+<h4 id="速度太慢？"><a href="#速度太慢？" class="headerlink" title="速度太慢？"></a><strong>速度太慢？</strong></h4><ol>
+<li><strong>换服务器地区</strong>：选择离你更近的节点</li>
+<li><strong>换协议</strong>：WireGuard &gt; V2Ray &gt; OpenVPN</li>
+<li><strong>升级配置</strong>：选择更高配置的 VPS</li>
+</ol>
+<h4 id="IP-被封？"><a href="#IP-被封？" class="headerlink" title="IP 被封？"></a><strong>IP 被封？</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新部署新服务器</span></span><br><span class="line"><span class="comment"># 删除当前服务器，创建新的</span></span><br><span class="line"><span class="comment"># 几分钟就能获得新IP</span></span><br></pre></td></tr></table></figure>
+<h3 id="🎁-省钱小技巧"><a href="#🎁-省钱小技巧" class="headerlink" title="🎁 省钱小技巧"></a><strong>🎁 省钱小技巧</strong></h3><ol>
+<li><strong>新用户优惠</strong>：Vultr 新用户送$100 体验金</li>
+<li><strong>按需使用</strong>：不用时删除服务器，用时重建</li>
+<li><strong>合理选择</strong>：512MB 内存足够轻度使用</li>
+<li><strong>流量监控</strong>：设置流量告警避免超额</li>
+<li><strong>多备份</strong>：准备 2-3 个不同服务商账号</li>
+</ol>
+<h3 id="⚡-终极懒人方案"><a href="#⚡-终极懒人方案" class="headerlink" title="⚡ 终极懒人方案"></a><strong>⚡ 终极懒人方案</strong></h3><p>如果连上面的步骤都觉得麻烦：</p>
+<ol>
+<li><strong>购买现成服务</strong>：找靠谱的技术朋友代搭建</li>
+<li><strong>使用脚本市场</strong>：一些自动化脚本网站</li>
+<li><strong>Docker 一键版</strong>：预打包的 Docker 镜像</li>
+</ol>
+<p><strong>一行命令搞定</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name wireguard --<span class="built_in">cap</span>-add=NET_ADMIN -p 51820:51820/udp -v wireguard:/config linuxserver/wireguard</span><br></pre></td></tr></table></figure>
+<h3 id="📞-需要帮助？"><a href="#📞-需要帮助？" class="headerlink" title="📞 需要帮助？"></a><strong>📞 需要帮助？</strong></h3><p><strong>常见问题</strong>：</p>
+<ul>
+<li>服务器连不上 → 检查 IP 是否被墙</li>
+<li>配置不成功 → 重新运行安装脚本</li>
+<li>速度太慢 → 换节点或升级配置</li>
+<li>手机连不上 → 检查客户端配置</li>
+</ul>
+<p><strong>总结</strong>：整个过程最快 10 分钟搞定，每月成本$2.5-5，比买一杯咖啡还便宜！</p>
+<p>需要我提供具体的搭建指导吗？我可以一步步教您操作！</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #666;font-size:14px;">------本文结束 <i class="fa fa-paw"></i> 感谢阅读------</div>
+        
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    luckyp
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://luckyp.top/VPN/" title="极简科学上网">https://luckyp.top/VPN/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cherryStudio使用/" rel="next" title="cherryStudio使用">
+                <i class="fa fa-chevron-left"></i> cherryStudio使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/注意力机制/" rel="prev" title="注意力机制相关">
+                注意力机制相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a67e93b36b300ba" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/icon.jpg" alt="luckyp">
+            
+              <p class="site-author-name" itemprop="name">luckyp</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yplian" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:lyp593839649@outlook.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎯-极简科学上网方案"><span class="nav-number">1.</span> <span class="nav-text">🎯 极简科学上网方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#💰-最经济配置"><span class="nav-number">1.1.</span> <span class="nav-text">💰 最经济配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🥇-推荐方案：-2-5-5-月"><span class="nav-number">1.1.1.</span> <span class="nav-text">🥇 推荐方案：$2.5-5/月</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🏆-超值推荐"><span class="nav-number">1.1.2.</span> <span class="nav-text">🏆 超值推荐</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⚡-最简单部署方法"><span class="nav-number">1.2.</span> <span class="nav-text">⚡ 最简单部署方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🔥-一键脚本安装（推荐新手）"><span class="nav-number">1.2.1.</span> <span class="nav-text">🔥 一键脚本安装（推荐新手）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案一：WireGuard-一键脚本"><span class="nav-number">1.2.2.</span> <span class="nav-text">方案一：WireGuard 一键脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案二：V2Ray-一键脚本"><span class="nav-number">1.2.3.</span> <span class="nav-text">方案二：V2Ray 一键脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案三：Shadowsocks-一键脚本"><span class="nav-number">1.2.4.</span> <span class="nav-text">方案三：Shadowsocks 一键脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#📱-客户端下载"><span class="nav-number">1.3.</span> <span class="nav-text">📱 客户端下载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安卓手机"><span class="nav-number">1.3.1.</span> <span class="nav-text">安卓手机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#苹果手机"><span class="nav-number">1.3.2.</span> <span class="nav-text">苹果手机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-电脑"><span class="nav-number">1.3.3.</span> <span class="nav-text">Windows 电脑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mac-电脑"><span class="nav-number">1.3.4.</span> <span class="nav-text">Mac 电脑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🚀-30-秒快速上手"><span class="nav-number">1.4.</span> <span class="nav-text">🚀 30 秒快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第-1-步：购买服务器（5-分钟）"><span class="nav-number">1.4.1.</span> <span class="nav-text">第 1 步：购买服务器（5 分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-2-步：连接服务器（2-分钟）"><span class="nav-number">1.4.2.</span> <span class="nav-text">第 2 步：连接服务器（2 分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-3-步：一键安装（1-分钟）"><span class="nav-number">1.4.3.</span> <span class="nav-text">第 3 步：一键安装（1 分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-4-步：获取配置（30-秒）"><span class="nav-number">1.4.4.</span> <span class="nav-text">第 4 步：获取配置（30 秒）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#💡-超简单使用方法"><span class="nav-number">1.5.</span> <span class="nav-text">💡 超简单使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手机使用"><span class="nav-number">1.5.1.</span> <span class="nav-text">手机使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电脑使用"><span class="nav-number">1.5.2.</span> <span class="nav-text">电脑使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#📊-成本对比"><span class="nav-number">1.6.</span> <span class="nav-text">📊 成本对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🛡️-安全优化（可选）"><span class="nav-number">1.7.</span> <span class="nav-text">🛡️ 安全优化（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🔧-常见问题解决"><span class="nav-number">1.8.</span> <span class="nav-text">🔧 常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连不上网络？"><span class="nav-number">1.8.1.</span> <span class="nav-text">连不上网络？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#速度太慢？"><span class="nav-number">1.8.2.</span> <span class="nav-text">速度太慢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP-被封？"><span class="nav-number">1.8.3.</span> <span class="nav-text">IP 被封？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎁-省钱小技巧"><span class="nav-number">1.9.</span> <span class="nav-text">🎁 省钱小技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⚡-终极懒人方案"><span class="nav-number">1.10.</span> <span class="nav-text">⚡ 终极懒人方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#📞-需要帮助？"><span class="nav-number">1.11.</span> <span class="nav-text">📞 需要帮助？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">luckyp</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">79.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  
+</body>
+</html>

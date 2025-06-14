@@ -123,7 +123,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="远方" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="宁静致远" type="application/atom+xml">
 
 
 
@@ -135,13 +135,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo用法">
 <meta property="og:url" content="https://luckyp.top/hexo用法/index.html">
-<meta property="og:site_name" content="远方">
+<meta property="og:site_name" content="宁静致远">
 <meta property="og:description" content="搭建属于自己的博客，通过github提供的github page的免费域名，以及hexo框架来快速搭建。目前遇到的问题，以提供解决方案。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://luckyp.top/images/hexo_1.png">
 <meta property="og:image" content="https://luckyp.top/images/hexo_2.png">
 <meta property="og:image" content="https://luckyp.top/images/hexo_3.png">
-<meta property="og:updated_time" content="2016-12-24T16:00:00.000Z">
+<meta property="og:updated_time" content="2016-12-26T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo用法">
 <meta name="twitter:description" content="搭建属于自己的博客，通过github提供的github page的免费域名，以及hexo框架来快速搭建。目前遇到的问题，以提供解决方案。">
@@ -181,7 +181,7 @@
 
 
 
-  <title>hexo用法 | 远方</title>
+  <title>hexo用法 | 宁静致远</title>
   
 
 
@@ -221,7 +221,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">远方</span>
+        <span class="site-title">宁静致远</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -349,7 +349,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="远方">
+      <meta itemprop="name" content="宁静致远">
     </span>
 
     
@@ -375,7 +375,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2016-12-27T00:00:00+08:00">
+                2016-12-27
+              </time>
             
           </span>
 
@@ -411,8 +423,8 @@
 <h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>拥有github账号、node以及git。</p>
 <h3 id="创建库"><a href="#创建库" class="headerlink" title="创建库"></a>创建库</h3><p>库名设为gitname.github.io,其中gitname是你的github账号昵称,如下图这里gitname为前面的luckbb。<br><img src="/images/hexo_1.png" alt="1"><br>设置guthub page的分支地址<br><img src="/images/hexo_2.png" alt="2"><br><img src="/images/hexo_3.png" alt="3"></p>
 <hr>
-<h2 id="hexo安装配置"><a href="#hexo安装配置" class="headerlink" title="hexo安装配置"></a>hexo安装配置</h2><p>可参照<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo https://hexo.io/</a>官网，目前使用的是hexo3.2。</p>
-<h3 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="hexo安装配置"><a href="#hexo安装配置" class="headerlink" title="hexo安装配置"></a>hexo安装配置</h2><p>可参照<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo https://hexo.io/</a>官网，目前使用的是hexo3.2，node版本为v8。</p>
+<h3 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">&lt;!-- 4.0以上版本不兼容hexo3.2，降级下载指定的版本 --&gt;</span><br><span class="line">npm install -g hexo-cli@3.2.1</span><br></pre></td></tr></table></figure>
 <h3 id="检测hexo"><a href="#检测hexo" class="headerlink" title="检测hexo"></a>检测hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>选择一个文件夹，初始化，不填参数在本路径下创建。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
@@ -596,7 +608,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +621,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -685,7 +697,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -699,7 +711,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">59.0k</span>
+    <span title="博客全站字数">79.4k</span>
   
 </div>
 
